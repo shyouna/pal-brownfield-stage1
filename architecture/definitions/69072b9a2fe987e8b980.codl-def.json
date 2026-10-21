@@ -1,0 +1,329 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "69072b9a2fe987e8b980",
+  "name" : "Product Roadmap",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "69072b9a2fe987e8b980",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "time",
+    "name" : "Time",
+    "description" : "Timeframes such as months or quarters",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Timeframe",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "order",
+      "label" : "Order",
+      "type" : "number",
+      "required" : false,
+      "min" : 1
+    } ]
+  }, {
+    "sectionKey" : "events",
+    "name" : "Events",
+    "description" : "Milestones, market events, outcomes or external events",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Event",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "column",
+      "label" : "Timeframe",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "milestone", "market", "outcome", "external", "release", "compliance" ]
+    }, {
+      "fieldKey" : "span",
+      "label" : "Span",
+      "type" : "number",
+      "required" : false,
+      "note" : "How many bands the item covers, in bands. 1 is one band; an item with no span reads as 1. Content, not layout — a duration survives export and appears in CoDL, which is why it is not underscore-prefixed.",
+      "min" : 0
+    }, {
+      "fieldKey" : "offset",
+      "label" : "Offset",
+      "type" : "number",
+      "required" : false,
+      "note" : "Where inside the anchor band the item starts, in [0,1). Written only on a DIVISIBLE (interval) axis: its absence is the signal that the axis has no inside, so an ordinal axis must never write a zero here.",
+      "min" : 0
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this lane item — never its name. The named row this time box sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    }, {
+      "fieldKey" : "start",
+      "label" : "Starts",
+      "type" : "string",
+      "required" : false,
+      "note" : "The time box's first day, INCLUSIVE, as `YYYY-MM-DD` text. Ergane-minted: the roadmap's axis is a calendar you zoom rather than bands you add, and a box stores two dates (`LaneGridCanvas.tsx` writeDates, calendarAxis.ts dateSpanOf). Typed `string`, not `date`, because the card reads this cell's TEXT and parses exactly `YYYY-MM-DD`: a `date`-typed cell is stored as a date-time, and this service's `date` branch refuses a plain day outright. Where a box carries both dates and a band placement (`column`/`offset`/`span`), the dates win and the band cells are read no further — they are never rewritten and never deleted."
+    }, {
+      "fieldKey" : "end",
+      "label" : "Ends",
+      "type" : "string",
+      "required" : false,
+      "note" : "The time box's last day, INCLUSIVE, as `YYYY-MM-DD` text — a one-day box has `end` equal to `start`. Ergane-minted, and typed `string` for the same reason as `start`. An `end` earlier than its `start` is read as the start, so the box never draws backwards."
+    } ]
+  }, {
+    "sectionKey" : "business",
+    "name" : "Business",
+    "description" : "Business features, capabilities or processes",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Business feature",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "column",
+      "label" : "Timeframe",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "asr_ref",
+      "label" : "Requirement",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "675f495d0039af23b2cb",
+      "referencedCanvasId" : "675f495d0039af23b2cb",
+      "referencedCanvasName" : "Architecturally Significant Requirement",
+      "referencedCanvasDefaultSection" : "asr_and_context"
+    }, {
+      "fieldKey" : "span",
+      "label" : "Span",
+      "type" : "number",
+      "required" : false,
+      "note" : "How many bands the item covers, in bands. 1 is one band; an item with no span reads as 1. Content, not layout — a duration survives export and appears in CoDL, which is why it is not underscore-prefixed.",
+      "min" : 0
+    }, {
+      "fieldKey" : "offset",
+      "label" : "Offset",
+      "type" : "number",
+      "required" : false,
+      "note" : "Where inside the anchor band the item starts, in [0,1). Written only on a DIVISIBLE (interval) axis: its absence is the signal that the axis has no inside, so an ordinal axis must never write a zero here.",
+      "min" : 0
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this lane item — never its name. The named row this time box sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    }, {
+      "fieldKey" : "start",
+      "label" : "Starts",
+      "type" : "string",
+      "required" : false,
+      "note" : "The time box's first day, INCLUSIVE, as `YYYY-MM-DD` text. Ergane-minted: the roadmap's axis is a calendar you zoom rather than bands you add, and a box stores two dates (`LaneGridCanvas.tsx` writeDates, calendarAxis.ts dateSpanOf). Typed `string`, not `date`, because the card reads this cell's TEXT and parses exactly `YYYY-MM-DD`: a `date`-typed cell is stored as a date-time, and this service's `date` branch refuses a plain day outright. Where a box carries both dates and a band placement (`column`/`offset`/`span`), the dates win and the band cells are read no further — they are never rewritten and never deleted."
+    }, {
+      "fieldKey" : "end",
+      "label" : "Ends",
+      "type" : "string",
+      "required" : false,
+      "note" : "The time box's last day, INCLUSIVE, as `YYYY-MM-DD` text — a one-day box has `end` equal to `start`. Ergane-minted, and typed `string` for the same reason as `start`. An `end` earlier than its `start` is read as the start, so the box never draws backwards."
+    } ]
+  }, {
+    "sectionKey" : "technology",
+    "name" : "Technology",
+    "description" : "Technical services or components supporting business features",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Technology",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "column",
+      "label" : "Timeframe",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "adr_ref",
+      "label" : "Decision",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision_name"
+    }, {
+      "fieldKey" : "span",
+      "label" : "Span",
+      "type" : "number",
+      "required" : false,
+      "note" : "How many bands the item covers, in bands. 1 is one band; an item with no span reads as 1. Content, not layout — a duration survives export and appears in CoDL, which is why it is not underscore-prefixed.",
+      "min" : 0
+    }, {
+      "fieldKey" : "offset",
+      "label" : "Offset",
+      "type" : "number",
+      "required" : false,
+      "note" : "Where inside the anchor band the item starts, in [0,1). Written only on a DIVISIBLE (interval) axis: its absence is the signal that the axis has no inside, so an ordinal axis must never write a zero here.",
+      "min" : 0
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this lane item — never its name. The named row this time box sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    }, {
+      "fieldKey" : "start",
+      "label" : "Starts",
+      "type" : "string",
+      "required" : false,
+      "note" : "The time box's first day, INCLUSIVE, as `YYYY-MM-DD` text. Ergane-minted: the roadmap's axis is a calendar you zoom rather than bands you add, and a box stores two dates (`LaneGridCanvas.tsx` writeDates, calendarAxis.ts dateSpanOf). Typed `string`, not `date`, because the card reads this cell's TEXT and parses exactly `YYYY-MM-DD`: a `date`-typed cell is stored as a date-time, and this service's `date` branch refuses a plain day outright. Where a box carries both dates and a band placement (`column`/`offset`/`span`), the dates win and the band cells are read no further — they are never rewritten and never deleted."
+    }, {
+      "fieldKey" : "end",
+      "label" : "Ends",
+      "type" : "string",
+      "required" : false,
+      "note" : "The time box's last day, INCLUSIVE, as `YYYY-MM-DD` text — a one-day box has `end` equal to `start`. Ergane-minted, and typed `string` for the same reason as `start`. An `end` earlier than its `start` is read as the start, so the box never draws backwards."
+    } ]
+  }, {
+    "sectionKey" : "people_and_learning",
+    "name" : "People and Learning",
+    "description" : "People requirements and learning needs — training, pilots, skills",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "People / learning need",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "column",
+      "label" : "Timeframe",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "span",
+      "label" : "Span",
+      "type" : "number",
+      "required" : false,
+      "note" : "How many bands the item covers, in bands. 1 is one band; an item with no span reads as 1. Content, not layout — a duration survives export and appears in CoDL, which is why it is not underscore-prefixed.",
+      "min" : 0
+    }, {
+      "fieldKey" : "offset",
+      "label" : "Offset",
+      "type" : "number",
+      "required" : false,
+      "note" : "Where inside the anchor band the item starts, in [0,1). Written only on a DIVISIBLE (interval) axis: its absence is the signal that the axis has no inside, so an ordinal axis must never write a zero here.",
+      "min" : 0
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this lane item — never its name. The named row this time box sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    }, {
+      "fieldKey" : "start",
+      "label" : "Starts",
+      "type" : "string",
+      "required" : false,
+      "note" : "The time box's first day, INCLUSIVE, as `YYYY-MM-DD` text. Ergane-minted: the roadmap's axis is a calendar you zoom rather than bands you add, and a box stores two dates (`LaneGridCanvas.tsx` writeDates, calendarAxis.ts dateSpanOf). Typed `string`, not `date`, because the card reads this cell's TEXT and parses exactly `YYYY-MM-DD`: a `date`-typed cell is stored as a date-time, and this service's `date` branch refuses a plain day outright. Where a box carries both dates and a band placement (`column`/`offset`/`span`), the dates win and the band cells are read no further — they are never rewritten and never deleted."
+    }, {
+      "fieldKey" : "end",
+      "label" : "Ends",
+      "type" : "string",
+      "required" : false,
+      "note" : "The time box's last day, INCLUSIVE, as `YYYY-MM-DD` text — a one-day box has `end` equal to `start`. Ergane-minted, and typed `string` for the same reason as `start`. An `end` earlier than its `start` is read as the start, so the box never draws backwards."
+    } ]
+  }, {
+    "sectionKey" : "business_case_ref",
+    "name" : "Business Case",
+    "description" : "The NABC business case this product roadmap delivers",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Business Case",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "68ff77c07e27eebe22af",
+      "referencedCanvasId" : "68ff77c07e27eebe22af",
+      "referencedCanvasName" : "Lean Business Case",
+      "referencedCanvasDefaultSection" : "need"
+    } ]
+  }, {
+    "sectionKey" : "rows",
+    "name" : "Rows",
+    "description" : "Named rows inside each lane. Ergane-minted: the published CoDL organises these canvases by lane only.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Row name",
+      "type" : "string",
+      "required" : false,
+      "note" : "The row's name, as the gutter prints it. May be empty — a row with no name is still a row."
+    }, {
+      "fieldKey" : "lane",
+      "label" : "Lane",
+      "type" : "string",
+      "required" : false,
+      "note" : "The sectionKey of the lane this row belongs to (e.g. \"doing\") — a section key, NOT an itemKey and not a label. A row whose lane names no lane section of this canvas is drawn nowhere."
+    }, {
+      "fieldKey" : "order",
+      "label" : "Order",
+      "type" : "number",
+      "required" : false,
+      "note" : "The row's place among its lane's rows, from 1. A row with no order sorts last.",
+      "min" : 1
+    } ]
+  }, {
+    "sectionKey" : "dependencies",
+    "name" : "Connections",
+    "description" : "Connections between items on this card. One item per edge, so an edge has its own itemKey and is individually addressable and individually deletable. Both ends are items on THIS entity; a link to another card is an item-level canvasRef (ADR-101), a different mechanism with different meaning, not this one stretched. Content, not layout — a connection is a fact about the plan, it exports and it appears in CoDL, which is why its fields are not underscore-prefixed.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "from",
+      "label" : "From",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection starts — the source end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `from` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "to",
+      "label" : "To",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection ends — the target end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `to` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "association", "depends_on", "enables" ],
+      "note" : "How the two ends relate. Optional: a missing or unrecognised kind reads as `association`, the bidirectional default, which is also what the card writes the moment a line is first drawn. `association` says the two are related and claims no direction; `depends_on` and `enables` claim one. Connecting B to A when A–B already exists removes that edge rather than stacking a second on top of it, so an edge is never stored twice in the two directions."
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "business",
+    "fromField" : "asr_ref",
+    "targetType" : "675f495d0039af23b2cb",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "technology",
+    "fromField" : "adr_ref",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "business_case_ref",
+    "fromField" : "value",
+    "targetType" : "68ff77c07e27eebe22af",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

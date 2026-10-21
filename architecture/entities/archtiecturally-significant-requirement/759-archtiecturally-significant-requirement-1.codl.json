@@ -1,0 +1,13 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 759,
+    "typeKey" : "675f495d0039af23b2cb",
+    "typeName" : "Archtiecturally Significant Requirement",
+    "name" : "Archtiecturally Significant Requirement #1",
+    "version" : 1,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/675f495d0039af23b2cb.codl-def.json",
+  "sections" : { }
+}

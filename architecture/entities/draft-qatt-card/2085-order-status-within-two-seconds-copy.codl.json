@@ -1,0 +1,99 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 2085,
+    "typeKey" : "draft-qatt-card",
+    "typeName" : "draft-qatt-card",
+    "name" : "Order status within two seconds copy",
+    "version" : 2,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/draft-qatt-card.codl-def.json",
+  "sections" : {
+    "artifact" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "cs-c7b5q0xi3ds",
+        "values" : {
+          "value" : "OrderService and its three channels: NotificationService, EmailGateway and MobilePush"
+        }
+      } ]
+    },
+    "environment" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "cs-c7b5q15y82x",
+        "values" : {
+          "value" : "Today OrderService calls all three channels inline and MobilePush times out 3% of the time"
+        }
+      }, {
+        "itemKey" : "it-mvhpm0il-k04",
+        "values" : {
+          "value" : {
+            "$ref" : {
+              "entityId" : 2075,
+              "typeKey" : "691c986c66c9b8ef3234",
+              "display" : "Context View #2"
+            }
+          }
+        }
+      } ]
+    },
+    "quality_attribute" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "cs-c7b5q00yezz",
+        "values" : {
+          "value" : "Responsiveness"
+        }
+      } ]
+    },
+    "requirement" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "cs-c7b5q099w7i",
+        "values" : {
+          "value" : "Customers see order status changes on web, mobile and email within 2 s at p95"
+        }
+      } ]
+    },
+    "response" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "cs-c7b5q1fxf80",
+        "values" : {
+          "value" : "The new status is shown on web, mobile and email"
+        }
+      } ]
+    },
+    "response_measure" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "cs-c7b5q1nh42g",
+        "values" : {
+          "measure" : "2",
+          "unit" : "s",
+          "value" : "Status latency at p95"
+        }
+      } ]
+    },
+    "source_of_stimulus" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "cs-c7b5q0heoey",
+        "values" : {
+          "value" : "An order status change in OrderService"
+        }
+      } ]
+    },
+    "stimulus" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "cs-c7b5q0pfxbz",
+        "values" : {
+          "value" : "The order status changes"
+        }
+      } ]
+    }
+  }
+}

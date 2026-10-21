@@ -1,0 +1,205 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "draft-decision-cascade-card",
+  "name" : "draft-decision-cascade-card",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "draft-decision-cascade-card",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "cascade_context",
+    "name" : "Cascade Context",
+    "description" : "The factors and context of the cascade: business drivers, technical constraints, and alternatives considered. Why are we doing this, and what forces are causing us to look at related decisions? Links to a Decision Record.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Cascade Context",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision"
+    } ]
+  }, {
+    "sectionKey" : "decision_biases",
+    "name" : "Decision Bias(es)",
+    "description" : "Any potential biases that could influence the decision — technical preferences or industry trends. The master names the Decision Bias Calibrator, which has no canvas here yet, so this box carries no link.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Decision Bias",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "decisions",
+    "name" : "Decisions",
+    "description" : "The primary decisions under evaluation — generally one to three, as a starting point for the cascade. Links to a Decision Record.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Decision",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision"
+    } ]
+  }, {
+    "sectionKey" : "tier_1_cascade",
+    "name" : "Tier 1 Cascade",
+    "description" : "The nearest ring of decisions this one impacts or is impacted by. The master's single 'Tiers' area, split into three columns because the published card draws three. Links to a Context View.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Tier 1 Cascade",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "691c986c66c9b8ef3234",
+      "referencedCanvasId" : "691c986c66c9b8ef3234",
+      "referencedCanvasName" : "Context View"
+    } ]
+  }, {
+    "sectionKey" : "tier_2_cascade",
+    "name" : "Tier 2 Cascade",
+    "description" : "The next ring out — decisions at a greater distance from the primary one. Links to a Context View.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Tier 2 Cascade",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "691c986c66c9b8ef3234",
+      "referencedCanvasId" : "691c986c66c9b8ef3234",
+      "referencedCanvasName" : "Context View"
+    } ]
+  }, {
+    "sectionKey" : "tier_3_cascade",
+    "name" : "Tier 3 Cascade",
+    "description" : "The furthest ring the cascade reaches. Links to a Context View.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Tier 3 Cascade",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "691c986c66c9b8ef3234",
+      "referencedCanvasId" : "691c986c66c9b8ef3234",
+      "referencedCanvasName" : "Context View"
+    } ]
+  }, {
+    "sectionKey" : "cascade_impacts",
+    "name" : "Cascade Impacts",
+    "description" : "The anticipated positive and negative downstream consequences — development time, scalability, security, and so on.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Cascade Impact",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "tiers",
+    "name" : "Tiers",
+    "description" : "The tier list — which cascade tiers this card shows, in order. Ergane-minted (RM-26.11): written only on the first add or remove; until then the three published tier sections are shown as they always were.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "order",
+      "label" : "Order",
+      "type" : "number",
+      "required" : false,
+      "note" : "The tier's position, from 1. A tier is numbered BY POSITION — remove tier 2 and tier 3 becomes tier 2 — so this is the only thing that names it. A tier with no order sorts last.",
+      "min" : 1
+    }, {
+      "fieldKey" : "section",
+      "label" : "Published section",
+      "type" : "string",
+      "required" : false,
+      "note" : "The sectionKey of the published tier section this tier reads and writes (\"tier_1_cascade\", \"tier_2_cascade\", \"tier_3_cascade\") — a section key, not an itemKey. Empty for a tier added since, whose cards live in `tier_cards`."
+    }, {
+      "fieldKey" : "removed",
+      "label" : "Removed",
+      "type" : "string",
+      "required" : false,
+      "note" : "The string \"true\" when this tier has been removed; anything else (including absent) means it is shown. A removed tier is FLAGGED rather than deleted, so removing all three never brings the defaults back — which is why this is a string and not a boolean."
+    } ]
+  }, {
+    "sectionKey" : "tier_cards",
+    "name" : "Tier cards",
+    "description" : "The cards of a tier ADDED since the published three. Ergane-minted (RM-26.11). A card in one of the three published tiers stays in that tier's own section.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Card",
+      "type" : "string",
+      "required" : false,
+      "note" : "What this decision forces — the text the card prints."
+    }, {
+      "fieldKey" : "tier",
+      "label" : "Tier",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `tiers` item — never its number, which is its position and changes when a tier is removed. A card naming no tier is drawn nowhere."
+    } ]
+  }, {
+    "sectionKey" : "dependencies",
+    "name" : "Connections",
+    "description" : "Connections between items on this card. One item per edge, so an edge has its own itemKey and is individually addressable and individually deletable. Both ends are items on THIS entity; a link to another card is an item-level canvasRef (ADR-101), a different mechanism with different meaning, not this one stretched. Content, not layout — a connection is a fact about the plan, it exports and it appears in CoDL, which is why its fields are not underscore-prefixed.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "from",
+      "label" : "From",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection starts — the source end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `from` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "to",
+      "label" : "To",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection ends — the target end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `to` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "association", "depends_on", "enables" ],
+      "note" : "How the two ends relate. Optional: a missing or unrecognised kind reads as `association`, the bidirectional default, which is also what the card writes the moment a line is first drawn. `association` says the two are related and claims no direction; `depends_on` and `enables` claim one. Connecting B to A when A–B already exists removes that edge rather than stacking a second on top of it, so an edge is never stored twice in the two directions."
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "cascade_context",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "decisions",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "tier_1_cascade",
+    "fromField" : "value",
+    "targetType" : "691c986c66c9b8ef3234",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "tier_2_cascade",
+    "fromField" : "value",
+    "targetType" : "691c986c66c9b8ef3234",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "tier_3_cascade",
+    "fromField" : "value",
+    "targetType" : "691c986c66c9b8ef3234",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

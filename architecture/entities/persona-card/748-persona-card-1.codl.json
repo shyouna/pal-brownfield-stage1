@@ -1,0 +1,13 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 748,
+    "typeKey" : "6769422b003bca7a31fe",
+    "typeName" : "Persona Card",
+    "name" : "Persona Card #1",
+    "version" : 1,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/6769422b003bca7a31fe.codl-def.json",
+  "sections" : { }
+}

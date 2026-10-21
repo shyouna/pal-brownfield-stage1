@@ -1,0 +1,82 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "draft-agile-team-designer",
+  "name" : "draft-agile-team-designer",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "draft-agile-team-designer",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "individual_architect",
+    "name" : "Individual Architect",
+    "description" : "How should I interact? How do I work with the other architects? How do I work with a single team? How many teams can I work with? Links to a Role Description in the method; no Ergane canvas yet.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Individual Architect",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "architect_team",
+    "name" : "Architect Team",
+    "description" : "How should the overall architecture team be involved? Which other architects work with the primary architect — mentors, reviewers, specialists? Links to the Architect Stakeholder Canvas in the method; no Ergane canvas yet.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Architect Team",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "team_of_teams",
+    "name" : "Teams of Teams",
+    "description" : "How many teams do you need? How will your architecture teams interact? Usually divided on a functional or service basis. Links to the Service and Functional views in the method; neither exists as an Ergane canvas yet.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Teams of Teams",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "individual_agile_team",
+    "name" : "Individual Agile Team",
+    "description" : "What are the basic roles for your organization? How would the architect(s) interact with each role? Typically five to nine people.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Individual Agile Team",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "dependencies",
+    "name" : "Connections",
+    "description" : "Connections between items on this card. One item per edge, so an edge has its own itemKey and is individually addressable and individually deletable. Both ends are items on THIS entity; a link to another card is an item-level canvasRef (ADR-101), a different mechanism with different meaning, not this one stretched. Content, not layout — a connection is a fact about the plan, it exports and it appears in CoDL, which is why its fields are not underscore-prefixed.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "from",
+      "label" : "From",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection starts — the source end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `from` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "to",
+      "label" : "To",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection ends — the target end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `to` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "association", "depends_on", "enables" ],
+      "note" : "How the two ends relate. Optional: a missing or unrecognised kind reads as `association`, the bidirectional default, which is also what the card writes the moment a line is first drawn. `association` says the two are related and claims no direction; `depends_on` and `enables` claim one. Connecting B to A when A–B already exists removes that edge rather than stacking a second on top of it, so an edge is never stored twice in the two directions."
+    } ]
+  } ],
+  "linksTo" : [ ]
+}

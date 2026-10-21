@@ -1,0 +1,12 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 765,
+    "typeKey" : "objective",
+    "name" : "Primary Objective",
+    "version" : 1,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/objective.codl-def.json",
+  "sections" : { }
+}

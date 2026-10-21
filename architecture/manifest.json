@@ -1,0 +1,26 @@
+{
+  "sddVersion" : "0.1",
+  "generator" : "ergane-integration",
+  "generatedAt" : "2026-10-21T18:13:55.382570137Z",
+  "solution" : {
+    "id" : 43,
+    "name" : "Sarah"
+  },
+  "provenance" : {
+    "definitionSource" : "metis",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/"
+  },
+  "invariants" : [ "entity-data-perfect", "refs-in-entity-model", "definitions-are-read-only", "layout-is-not-meaning" ],
+  "counts" : {
+    "entities" : 33,
+    "definitions" : 19,
+    "models" : 2,
+    "documents" : 4,
+    "edges" : 6
+  },
+  "ownership" : {
+    "machineOwnedPrefix" : "architecture/",
+    "note" : "Ergane regenerates everything under machineOwnedPrefix, and additionally owns exactly the paths listed in machineOwnedPaths. A path Ergane has not listed here is never deleted by a publish.",
+    "machineOwnedPaths" : [ ".agents/skills/architecture-change-proposal/SKILL.md", ".agents/skills/architecture-drift-check/SKILL.md", ".agents/skills/architecture-implementation/SKILL.md", ".agents/skills/architecture-orientation/SKILL.md", ".claude/skills/architecture-change-proposal/SKILL.md", ".claude/skills/architecture-drift-check/SKILL.md", ".claude/skills/architecture-implementation/SKILL.md", ".claude/skills/architecture-orientation/SKILL.md", "CLAUDE.sdd.md" ]
+  }
+}

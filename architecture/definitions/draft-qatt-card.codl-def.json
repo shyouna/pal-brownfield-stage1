@@ -1,0 +1,231 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "draft-qatt-card",
+  "name" : "draft-qatt-card",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "draft-qatt-card",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "quality_attribute",
+    "name" : "Quality Attribute",
+    "description" : "Which quality attribute(s) will be impacted. Ex Performance, Security.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Quality Attribute",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "675f495d0039af23b2cb",
+      "referencedCanvasId" : "675f495d0039af23b2cb",
+      "referencedCanvasName" : "Architecturally Significant Requirement",
+      "referencedCanvasDefaultSection" : "asr_and_context",
+      "primaryDisplay" : true
+    } ]
+  }, {
+    "sectionKey" : "requirement",
+    "name" : "Quality Attribute Requirement",
+    "description" : "The requirement that links to the quality attribute, with the characteristic naming the nature of it and its impact.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Requirement",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "675f495d0039af23b2cb",
+      "referencedCanvasId" : "675f495d0039af23b2cb",
+      "referencedCanvasName" : "Architecturally Significant Requirement",
+      "referencedCanvasDefaultSection" : "asr_and_context"
+    }, {
+      "fieldKey" : "characteristic",
+      "label" : "Characteristic",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "sub_characteristic",
+      "label" : "Sub-characteristic",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "source_of_stimulus",
+    "name" : "Source of Stimulus",
+    "description" : "An entity capable of creating stimulus — internal or external people, a computer system.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Source of Stimulus",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "environment",
+    "name" : "Environment",
+    "description" : "The environment where the stimulus occurs — normal operation, seasonal peak, financial close, high latency, or any relevant state. On the published card this box CONTAINS the artifact, response and response measure: the same stimulus against the same artifact answers differently inside a different environment.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Environment",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "691c986c66c9b8ef3234",
+      "referencedCanvasId" : "691c986c66c9b8ef3234",
+      "referencedCanvasName" : "Context View",
+      "referencedCanvasDefaultSection" : "content"
+    } ]
+  }, {
+    "sectionKey" : "stimulus",
+    "name" : "Stimulus",
+    "description" : "A condition that requires a response when it arrives at the system.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Stimulus",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "artifact",
+    "name" : "Artifact(s)",
+    "description" : "What receives the stimulus — a component, the whole system, or several systems.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Artifact(s)",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "response",
+    "name" : "Response",
+    "description" : "The response of the artifact to the stimulus.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Response",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "response_measure",
+    "name" : "Response Measure",
+    "description" : "How the response is measured to test whether the requirement is well implemented. A response with no measure is the failure ATAM exists to catch.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Response Measure",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "measure",
+      "label" : "Measure",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "unit",
+      "label" : "Unit",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "trade_offs",
+    "name" : "Trade-offs",
+    "description" : "The positives and negatives that follow from the tactics chosen.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Trade-offs",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "tactics",
+    "name" : "Tactics",
+    "description" : "The architecture decisions and techniques used to create the desired result.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Tactic",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision"
+    } ]
+  }, {
+    "sectionKey" : "pros",
+    "name" : "+",
+    "description" : "Advantages of the approach taken to meet the requirement.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "+",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "cons",
+    "name" : "−",
+    "description" : "Disadvantages of the approach taken to meet the requirement.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "−",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "dependencies",
+    "name" : "Connections",
+    "description" : "Connections between items on this card. One item per edge, so an edge has its own itemKey and is individually addressable and individually deletable. Both ends are items on THIS entity; a link to another card is an item-level canvasRef (ADR-101), a different mechanism with different meaning, not this one stretched. Content, not layout — a connection is a fact about the plan, it exports and it appears in CoDL, which is why its fields are not underscore-prefixed.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "from",
+      "label" : "From",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection starts — the source end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `from` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "to",
+      "label" : "To",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection ends — the target end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `to` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "association", "depends_on", "enables" ],
+      "note" : "How the two ends relate. Optional: a missing or unrecognised kind reads as `association`, the bidirectional default, which is also what the card writes the moment a line is first drawn. `association` says the two are related and claims no direction; `depends_on` and `enables` claim one. Connecting B to A when A–B already exists removes that edge rather than stacking a second on top of it, so an edge is never stored twice in the two directions."
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "quality_attribute",
+    "fromField" : "value",
+    "targetType" : "675f495d0039af23b2cb",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "requirement",
+    "fromField" : "value",
+    "targetType" : "675f495d0039af23b2cb",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "environment",
+    "fromField" : "value",
+    "targetType" : "691c986c66c9b8ef3234",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "tactics",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

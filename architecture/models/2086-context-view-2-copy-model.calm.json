@@ -1,0 +1,148 @@
+{
+  "$schema" : "https://calm.finos.org/release/1.2/meta/calm.json",
+  "unique-id" : "diagram-a9d67c9f-d017-4520-ba7e-ca73e81f4d17",
+  "name" : "Model",
+  "nodes" : [ {
+    "unique-id" : "node-04e07dfc-5772-4166-9dc2-e4990efd3b3f",
+    "node-type" : "service",
+    "name" : "API Gateway",
+    "description" : ""
+  }, {
+    "unique-id" : "node-1bd9b0cf-f32e-4d00-a8d8-550b037c013f",
+    "node-type" : "system",
+    "name" : "CustomerPortal",
+    "description" : ""
+  }, {
+    "unique-id" : "node-a5a8aed5-d110-43a2-85a5-3c4a36e668be",
+    "node-type" : "service",
+    "name" : "OrderService",
+    "description" : ""
+  }, {
+    "unique-id" : "node-99b1ca53-f1a8-4219-9171-301337d5dfd0",
+    "node-type" : "service",
+    "name" : "PaymentService",
+    "description" : ""
+  }, {
+    "unique-id" : "node-ed7bef06-c78d-4657-a8bd-2be0c136cab8",
+    "node-type" : "service",
+    "name" : "NotificationService",
+    "description" : ""
+  }, {
+    "unique-id" : "node-639d5068-b183-4338-a003-accfaa0ac3d3",
+    "node-type" : "service",
+    "name" : "EmailGateway",
+    "description" : ""
+  }, {
+    "unique-id" : "node-9bd605d2-72cb-4f4b-9904-a2e36928a35f",
+    "node-type" : "service",
+    "name" : "MobilePush",
+    "description" : ""
+  }, {
+    "unique-id" : "node-23247ca7-1602-46d7-a7dd-390665a47d63",
+    "node-type" : "database",
+    "name" : "Customer DB",
+    "description" : ""
+  }, {
+    "unique-id" : "node-f0659abd-03a2-4cdd-921c-253d32ec8bc1",
+    "node-type" : "actor",
+    "name" : "Card Processor",
+    "description" : ""
+  } ],
+  "relationships" : [ {
+    "unique-id" : "rel-a3243f06-ca37-4eb2-9c2a-8032e8854e2c",
+    "relationship-type" : {
+      "connects" : {
+        "source" : {
+          "node" : "node-04e07dfc-5772-4166-9dc2-e4990efd3b3f"
+        },
+        "destination" : {
+          "node" : "node-1bd9b0cf-f32e-4d00-a8d8-550b037c013f"
+        }
+      }
+    }
+  }, {
+    "unique-id" : "rel-10796f4c-f9cb-4a11-b0cc-d3ce12eb5715",
+    "relationship-type" : {
+      "connects" : {
+        "source" : {
+          "node" : "node-1bd9b0cf-f32e-4d00-a8d8-550b037c013f"
+        },
+        "destination" : {
+          "node" : "node-23247ca7-1602-46d7-a7dd-390665a47d63"
+        }
+      }
+    }
+  }, {
+    "unique-id" : "rel-1bc9ec7d-7f8a-4384-85e8-e2513c7d5d58",
+    "relationship-type" : {
+      "connects" : {
+        "source" : {
+          "node" : "node-a5a8aed5-d110-43a2-85a5-3c4a36e668be"
+        },
+        "destination" : {
+          "node" : "node-23247ca7-1602-46d7-a7dd-390665a47d63"
+        }
+      }
+    }
+  }, {
+    "unique-id" : "rel-9d496aef-6fb4-4ff1-aaeb-85b0bf52b39d",
+    "relationship-type" : {
+      "connects" : {
+        "source" : {
+          "node" : "node-a5a8aed5-d110-43a2-85a5-3c4a36e668be"
+        },
+        "destination" : {
+          "node" : "node-99b1ca53-f1a8-4219-9171-301337d5dfd0"
+        }
+      }
+    }
+  }, {
+    "unique-id" : "rel-d6e0821f-bbd9-46f5-8efa-5557d8be4a8f",
+    "relationship-type" : {
+      "connects" : {
+        "source" : {
+          "node" : "node-99b1ca53-f1a8-4219-9171-301337d5dfd0"
+        },
+        "destination" : {
+          "node" : "node-f0659abd-03a2-4cdd-921c-253d32ec8bc1"
+        }
+      }
+    }
+  }, {
+    "unique-id" : "rel-06b9d605-3acb-4705-8cd1-36575df2932f",
+    "relationship-type" : {
+      "connects" : {
+        "source" : {
+          "node" : "node-a5a8aed5-d110-43a2-85a5-3c4a36e668be"
+        },
+        "destination" : {
+          "node" : "node-9bd605d2-72cb-4f4b-9904-a2e36928a35f"
+        }
+      }
+    }
+  }, {
+    "unique-id" : "rel-6e459f03-d987-4450-b49f-945cdc2318f8",
+    "relationship-type" : {
+      "connects" : {
+        "source" : {
+          "node" : "node-a5a8aed5-d110-43a2-85a5-3c4a36e668be"
+        },
+        "destination" : {
+          "node" : "node-639d5068-b183-4338-a003-accfaa0ac3d3"
+        }
+      }
+    }
+  }, {
+    "unique-id" : "rel-2240825e-1a2c-488e-974f-5098285ba890",
+    "relationship-type" : {
+      "connects" : {
+        "source" : {
+          "node" : "node-a5a8aed5-d110-43a2-85a5-3c4a36e668be"
+        },
+        "destination" : {
+          "node" : "node-ed7bef06-c78d-4657-a8bd-2be0c136cab8"
+        }
+      }
+    }
+  } ]
+}

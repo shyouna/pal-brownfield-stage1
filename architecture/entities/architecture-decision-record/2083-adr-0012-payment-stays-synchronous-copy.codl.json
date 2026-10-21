@@ -1,0 +1,41 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 2083,
+    "typeKey" : "696364be003cc58ff2da",
+    "typeName" : "Architecture Decision Record",
+    "name" : "ADR-0012 Payment stays synchronous copy",
+    "version" : 2,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/696364be003cc58ff2da.codl-def.json",
+  "sections" : {
+    "decision" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "Payment stays synchronous: OrderService calls PaymentService and uses the reply."
+      }
+    },
+    "decision_name" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "ADR-0012 Payment stays synchronous copy"
+      }
+    },
+    "traceability" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "it-mvhpjlhs-2k5",
+        "values" : {
+          "context_view_ref" : {
+            "$ref" : {
+              "entityId" : 2075,
+              "typeKey" : "691c986c66c9b8ef3234",
+              "display" : "Context View #2"
+            }
+          }
+        }
+      } ]
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "693c585d0005308a3d19",
+  "name" : "Principle Card",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "693c585d0005308a3d19",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "name",
+    "name" : "Name",
+    "description" : "Interactive rect area on canvas",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Value",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "rectangle",
+    "name" : "Rectangle",
+    "description" : "Interactive rect area on canvas",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Value",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "scope",
+    "name" : "Scope",
+    "description" : "Where this principle applies. The sample card published with the concept reads \"Scope: Enterprise\".",
+    "cardinality" : "one",
+    "fields" : [ {
+      "type" : "string",
+      "label" : "Scope",
+      "fieldKey" : "value",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "business_drivers",
+    "name" : "Business Drivers",
+    "description" : "The forces the principle answers to. Many rationales are themselves business drivers.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "type" : "string",
+      "label" : "Business Drivers",
+      "fieldKey" : "value",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "rationale",
+    "name" : "Rationale",
+    "description" : "Rationales to justify or explain the motivation for the principle — that is, why it has been adopted.",
+    "cardinality" : "one",
+    "fields" : [ {
+      "type" : "longtext",
+      "label" : "Rationale",
+      "fieldKey" : "value",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "linked_principles",
+    "name" : "Linked Principles",
+    "description" : "Other principles this one depends on, reinforces or tensions against. Many implications turn into further principles themselves.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "type" : "canvasRef",
+      "label" : "Principle",
+      "fieldKey" : "value",
+      "required" : false,
+      "referencedCanvas" : "693c585d0005308a3d19",
+      "referencedCanvasId" : "693c585d0005308a3d19",
+      "referencedCanvasName" : "Organization Principle Card"
+    } ]
+  }, {
+    "sectionKey" : "implications",
+    "name" : "Implications",
+    "description" : "The consequences or outcomes of adopting the principle.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "type" : "string",
+      "label" : "Implications",
+      "fieldKey" : "value",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "actions",
+    "name" : "Actions",
+    "description" : "Actions which the principle drives.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "type" : "string",
+      "label" : "Actions",
+      "fieldKey" : "value",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "decisions",
+    "name" : "Decisions",
+    "description" : "The decisions this principle drove or constrained. Each links to its Architecture Decision Record.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "type" : "canvasRef",
+      "label" : "Decision",
+      "fieldKey" : "value",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision_name",
+      "referencedCanvasDefaultSectionName" : "Decision"
+    } ]
+  }, {
+    "sectionKey" : "identified_expectations",
+    "name" : "Identified Expectations",
+    "description" : "What adopting this principle leads people to expect, so the expectation is on the card rather than in the room.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "type" : "string",
+      "label" : "Identified Expectations",
+      "fieldKey" : "value",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "allowed_exemptions",
+    "name" : "Allowed Exemptions",
+    "description" : "Exceptions, if allowed for tactical reasons, are specified.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "type" : "string",
+      "label" : "Allowed Exemptions",
+      "fieldKey" : "value",
+      "required" : false
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "linked_principles",
+    "fromField" : "value",
+    "targetType" : "693c585d0005308a3d19",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "decisions",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

@@ -1,0 +1,255 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "68fa4f6b022c0cea3fb0",
+  "name" : "Customer Journey Map",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "68fa4f6b022c0cea3fb0",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "stages",
+    "name" : "Stages",
+    "description" : "Discrete sections of the journey, based on clear customer transitions",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "order",
+      "label" : "Order",
+      "type" : "number",
+      "required" : false,
+      "min" : 1
+    } ]
+  }, {
+    "sectionKey" : "doing",
+    "name" : "Doing",
+    "description" : "What actions the customer is taking (action verbs)",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Doing",
+      "type" : "longtext",
+      "required" : false
+    }, {
+      "fieldKey" : "column",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "span",
+      "label" : "Span",
+      "type" : "number",
+      "required" : false,
+      "note" : "How many bands the item covers, in bands. 1 is one band; an item with no span reads as 1. Content, not layout — a duration survives export and appears in CoDL, which is why it is not underscore-prefixed.",
+      "min" : 0
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this lane item — never its name. The named row this step sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    } ]
+  }, {
+    "sectionKey" : "thinking",
+    "name" : "Thinking",
+    "description" : "What is in the customer's head at this stage",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Thinking",
+      "type" : "longtext",
+      "required" : false
+    }, {
+      "fieldKey" : "column",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "span",
+      "label" : "Span",
+      "type" : "number",
+      "required" : false,
+      "note" : "How many bands the item covers, in bands. 1 is one band; an item with no span reads as 1. Content, not layout — a duration survives export and appears in CoDL, which is why it is not underscore-prefixed.",
+      "min" : 0
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this lane item — never its name. The named row this step sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    } ]
+  }, {
+    "sectionKey" : "feeling",
+    "name" : "Feeling",
+    "description" : "The emotional journey across the stages",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Feeling",
+      "type" : "longtext",
+      "required" : false
+    }, {
+      "fieldKey" : "column",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "sentiment",
+      "label" : "Sentiment",
+      "type" : "slider",
+      "required" : false,
+      "min" : -2,
+      "max" : 2,
+      "step" : 1
+    }, {
+      "fieldKey" : "span",
+      "label" : "Span",
+      "type" : "number",
+      "required" : false,
+      "note" : "How many bands the item covers, in bands. 1 is one band; an item with no span reads as 1. Content, not layout — a duration survives export and appears in CoDL, which is why it is not underscore-prefixed.",
+      "min" : 0
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this lane item — never its name. The named row this step sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    } ]
+  }, {
+    "sectionKey" : "opportunities",
+    "name" : "Opportunities",
+    "description" : "Opportunities to improve the customer's journey, and the objectives / business cases they feed",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Opportunity",
+      "type" : "longtext",
+      "required" : false
+    }, {
+      "fieldKey" : "column",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "business_case_ref",
+      "label" : "Business Case",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "68ff77c07e27eebe22af",
+      "referencedCanvasId" : "68ff77c07e27eebe22af",
+      "referencedCanvasName" : "Lean Business Case",
+      "referencedCanvasDefaultSection" : "need"
+    }, {
+      "fieldKey" : "okr_ref",
+      "label" : "Objective",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "69a701870009e16c7959",
+      "referencedCanvasId" : "69a701870009e16c7959",
+      "referencedCanvasName" : "OKR Card",
+      "referencedCanvasDefaultSection" : "objective"
+    }, {
+      "fieldKey" : "span",
+      "label" : "Span",
+      "type" : "number",
+      "required" : false,
+      "note" : "How many bands the item covers, in bands. 1 is one band; an item with no span reads as 1. Content, not layout — a duration survives export and appears in CoDL, which is why it is not underscore-prefixed.",
+      "min" : 0
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this lane item — never its name. The named row this step sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    } ]
+  }, {
+    "sectionKey" : "personas",
+    "name" : "Personas",
+    "description" : "Personas travelling this journey",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Persona",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "6769422b003bca7a31fe",
+      "referencedCanvasId" : "6769422b003bca7a31fe",
+      "referencedCanvasName" : "Persona Card",
+      "referencedCanvasDefaultSection" : "persona"
+    } ]
+  }, {
+    "sectionKey" : "rows",
+    "name" : "Rows",
+    "description" : "Named rows inside each lane. Ergane-minted: the published CoDL organises these canvases by lane only.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Row name",
+      "type" : "string",
+      "required" : false,
+      "note" : "The row's name, as the gutter prints it. May be empty — a row with no name is still a row."
+    }, {
+      "fieldKey" : "lane",
+      "label" : "Lane",
+      "type" : "string",
+      "required" : false,
+      "note" : "The sectionKey of the lane this row belongs to (e.g. \"doing\") — a section key, NOT an itemKey and not a label. A row whose lane names no lane section of this canvas is drawn nowhere."
+    }, {
+      "fieldKey" : "order",
+      "label" : "Order",
+      "type" : "number",
+      "required" : false,
+      "note" : "The row's place among its lane's rows, from 1. A row with no order sorts last.",
+      "min" : 1
+    } ]
+  }, {
+    "sectionKey" : "dependencies",
+    "name" : "Connections",
+    "description" : "Connections between items on this card. One item per edge, so an edge has its own itemKey and is individually addressable and individually deletable. Both ends are items on THIS entity; a link to another card is an item-level canvasRef (ADR-101), a different mechanism with different meaning, not this one stretched. Content, not layout — a connection is a fact about the plan, it exports and it appears in CoDL, which is why its fields are not underscore-prefixed.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "from",
+      "label" : "From",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection starts — the source end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `from` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "to",
+      "label" : "To",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection ends — the target end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `to` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "association", "depends_on", "enables" ],
+      "note" : "How the two ends relate. Optional: a missing or unrecognised kind reads as `association`, the bidirectional default, which is also what the card writes the moment a line is first drawn. `association` says the two are related and claims no direction; `depends_on` and `enables` claim one. Connecting B to A when A–B already exists removes that edge rather than stacking a second on top of it, so an edge is never stored twice in the two directions."
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "opportunities",
+    "fromField" : "business_case_ref",
+    "targetType" : "68ff77c07e27eebe22af",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "opportunities",
+    "fromField" : "okr_ref",
+    "targetType" : "69a701870009e16c7959",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "personas",
+    "fromField" : "value",
+    "targetType" : "6769422b003bca7a31fe",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

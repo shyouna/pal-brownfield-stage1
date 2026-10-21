@@ -1,0 +1,265 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 1873,
+    "typeKey" : "691c986c66c9b8ef3234",
+    "typeName" : "Context View",
+    "name" : "CV-TEST1",
+    "version" : 3,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/691c986c66c9b8ef3234.codl-def.json",
+  "sections" : {
+    "domain" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "CV-TEST1"
+      }
+    },
+    "model" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : {
+          "$schema" : "https://calm.finos.org/release/1.2/meta/calm.json",
+          "unique-id" : "diagram-2ea37103-a659-45db-b69f-5f20f0b43005",
+          "name" : "Model",
+          "nodes" : [ {
+            "unique-id" : "node-75ee82c0-862f-4264-8b97-2786bc865b7a",
+            "node-type" : "actor",
+            "name" : "New actor",
+            "description" : ""
+          }, {
+            "unique-id" : "node-484baf1e-4147-4297-a369-4c9636aba960",
+            "node-type" : "ecosystem",
+            "name" : "New ecosystem",
+            "description" : ""
+          }, {
+            "unique-id" : "node-3a3a5cdc-46f6-4af4-8e98-6e14424bf0fc",
+            "node-type" : "system",
+            "name" : "Test System",
+            "description" : ""
+          }, {
+            "unique-id" : "node-93732e91-246e-4420-857d-0ae11bac7e3b",
+            "node-type" : "service",
+            "name" : "New service",
+            "description" : ""
+          }, {
+            "unique-id" : "node-bcc8558c-9aa4-4919-8282-6b63d1671da6",
+            "node-type" : "database",
+            "name" : "New database",
+            "description" : ""
+          }, {
+            "unique-id" : "node-0e472bb1-48ae-4f13-95bd-8b5458a227a5",
+            "node-type" : "database",
+            "name" : "New database",
+            "description" : ""
+          }, {
+            "unique-id" : "node-8a1c13dc-0395-4897-8231-fb59817d11e6",
+            "node-type" : "network",
+            "name" : "Container",
+            "description" : ""
+          }, {
+            "unique-id" : "node-f8b9893d-3548-4048-9270-a465cde6bf1d",
+            "node-type" : "ldap",
+            "name" : "New ldap",
+            "description" : ""
+          }, {
+            "unique-id" : "node-a7d8b9d4-95b0-422a-a3c0-1af8dd78433e",
+            "node-type" : "webclient",
+            "name" : "New webclient",
+            "description" : ""
+          }, {
+            "unique-id" : "node-7ab87ea5-c795-42a4-8c44-f8ab85c3fd76",
+            "node-type" : "data-asset",
+            "name" : "New data asset",
+            "description" : ""
+          } ],
+          "relationships" : [ {
+            "unique-id" : "rel-748fc41d-e54f-4c7f-adeb-3da579df35bf",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-484baf1e-4147-4297-a369-4c9636aba960"
+                },
+                "destination" : {
+                  "node" : "node-75ee82c0-862f-4264-8b97-2786bc865b7a"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-74bcb38c-81c3-4965-9545-3d7096d36e08",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-3a3a5cdc-46f6-4af4-8e98-6e14424bf0fc"
+                },
+                "destination" : {
+                  "node" : "node-75ee82c0-862f-4264-8b97-2786bc865b7a"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-d425d00d-7414-4404-a2f2-64bdbcde8cfe",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-3a3a5cdc-46f6-4af4-8e98-6e14424bf0fc"
+                },
+                "destination" : {
+                  "node" : "node-484baf1e-4147-4297-a369-4c9636aba960"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-53a3e7af-ae3a-4026-a6b0-db52887aafbc",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-0e472bb1-48ae-4f13-95bd-8b5458a227a5"
+                },
+                "destination" : {
+                  "node" : "node-3a3a5cdc-46f6-4af4-8e98-6e14424bf0fc"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-9c2d74c6-6d8e-4788-a899-b1d9b918dd24",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-8a1c13dc-0395-4897-8231-fb59817d11e6"
+                },
+                "destination" : {
+                  "node" : "node-3a3a5cdc-46f6-4af4-8e98-6e14424bf0fc"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-0e3cfb9f-2ec7-4062-9282-1291020ec31b",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-f8b9893d-3548-4048-9270-a465cde6bf1d"
+                },
+                "destination" : {
+                  "node" : "node-3a3a5cdc-46f6-4af4-8e98-6e14424bf0fc"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-5a614962-c51a-4a6d-9bec-91ded3e60f47",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-a7d8b9d4-95b0-422a-a3c0-1af8dd78433e"
+                },
+                "destination" : {
+                  "node" : "node-3a3a5cdc-46f6-4af4-8e98-6e14424bf0fc"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-02a12555-7f89-4468-aa12-ac3f39c9139f",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-7ab87ea5-c795-42a4-8c44-f8ab85c3fd76"
+                },
+                "destination" : {
+                  "node" : "node-3a3a5cdc-46f6-4af4-8e98-6e14424bf0fc"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-f7ec0f15-3462-4092-a8e6-9889d70e75ea",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-93732e91-246e-4420-857d-0ae11bac7e3b"
+                },
+                "destination" : {
+                  "node" : "node-f8b9893d-3548-4048-9270-a465cde6bf1d"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-47b09d8f-a6c5-4324-a47a-bef00c133567",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-93732e91-246e-4420-857d-0ae11bac7e3b"
+                },
+                "destination" : {
+                  "node" : "node-3a3a5cdc-46f6-4af4-8e98-6e14424bf0fc"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-95142039-b336-41c9-be70-0d1c6af0bc1a",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-bcc8558c-9aa4-4919-8282-6b63d1671da6"
+                },
+                "destination" : {
+                  "node" : "node-75ee82c0-862f-4264-8b97-2786bc865b7a"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-55fed848-3fe7-4e5d-a3ea-125f5e43ac37",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-bcc8558c-9aa4-4919-8282-6b63d1671da6"
+                },
+                "destination" : {
+                  "node" : "node-93732e91-246e-4420-857d-0ae11bac7e3b"
+                }
+              }
+            }
+          }, {
+            "unique-id" : "rel-b7a47b08-73f7-4e46-afad-c7045865c507",
+            "relationship-type" : {
+              "connects" : {
+                "source" : {
+                  "node" : "node-bcc8558c-9aa4-4919-8282-6b63d1671da6"
+                },
+                "destination" : {
+                  "node" : "node-7ab87ea5-c795-42a4-8c44-f8ab85c3fd76"
+                }
+              }
+            }
+          } ]
+        }
+      }
+    },
+    "requirements" : {
+      "cardinality" : "many",
+      "values" : { },
+      "items" : [ {
+        "itemKey" : "it-mvevuj63-laz",
+        "values" : {
+          "value" : {
+            "$ref" : {
+              "entityId" : 759,
+              "typeKey" : "675f495d0039af23b2cb",
+              "display" : "Archtiecturally Significant Requirement #1"
+            }
+          }
+        }
+      }, {
+        "itemKey" : "it-mvhimu6t-wqz",
+        "values" : {
+          "value" : {
+            "$ref" : {
+              "entityId" : 2073,
+              "typeKey" : "675f495d0039af23b2cb",
+              "display" : "ASR-TEST1"
+            }
+          }
+        }
+      } ]
+    }
+  }
+}

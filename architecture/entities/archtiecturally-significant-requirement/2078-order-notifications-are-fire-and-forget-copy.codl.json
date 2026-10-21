@@ -1,0 +1,38 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 2078,
+    "typeKey" : "675f495d0039af23b2cb",
+    "typeName" : "Archtiecturally Significant Requirement",
+    "name" : "Order notifications are fire and forget copy",
+    "version" : 3,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/675f495d0039af23b2cb.codl-def.json",
+  "sections" : {
+    "asr_and_context" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "Order notifications are fire and forget"
+      }
+    },
+    "objectives_impact" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "Serves the quality attribute requirement 'Order status within two seconds': status within 2 s at p95. Also serves fault isolation: a slow channel never slows the order."
+      }
+    },
+    "scope" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "Edges order-to-notification, order-to-email and order-to-push, from OrderService to NotificationService, EmailGateway and MobilePush. replyRequired: false. OrderService does not wait for or use a reply, and status reaches the customer within 2 s at p95."
+      }
+    },
+    "type" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "integration"
+      }
+    }
+  }
+}

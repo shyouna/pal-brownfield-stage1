@@ -1,0 +1,148 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "691c986c66c9b8ef3234",
+  "name" : "Context View",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "691c986c66c9b8ef3234",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "model",
+    "name" : "Model",
+    "description" : "Use an appropriate model at the appropriate detail to describe the view",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Model",
+      "type" : "model",
+      "required" : false,
+      "modelNotation" : "freeform"
+    } ]
+  }, {
+    "sectionKey" : "viewpoint",
+    "name" : "Viewpoint",
+    "description" : "Native canvas section",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Viewpoint",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "domain",
+    "name" : "Domain",
+    "description" : "Native canvas section",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Domain",
+      "type" : "string",
+      "required" : false,
+      "primaryDisplay" : true
+    } ]
+  }, {
+    "sectionKey" : "description",
+    "name" : "Description",
+    "description" : "Why are we creating this view",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "requirements",
+    "name" : "Requirements",
+    "description" : "List ASRs relevant to this view",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Requirement",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "675f495d0039af23b2cb",
+      "referencedCanvasId" : "675f495d0039af23b2cb",
+      "referencedCanvasName" : "Architecturally Significant Requirement",
+      "referencedCanvasDefaultSection" : "asr_and_context"
+    } ]
+  }, {
+    "sectionKey" : "decisions",
+    "name" : "Decisions",
+    "description" : "List ADRs relevant to this view",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Decision",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision_name"
+    } ]
+  }, {
+    "sectionKey" : "warnings",
+    "name" : "Warnings",
+    "description" : "Known problems and errors in this view",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Warning",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "assumptions_caveats",
+    "name" : "Assumptions / Caveats",
+    "description" : "What we do not know; things the reader must keep in mind",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Assumption",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "dependencies",
+    "name" : "Connections",
+    "description" : "Connections between items on this card. One item per edge, so an edge has its own itemKey and is individually addressable and individually deletable. Both ends are items on THIS entity; a link to another card is an item-level canvasRef (ADR-101), a different mechanism with different meaning, not this one stretched. Content, not layout — a connection is a fact about the plan, it exports and it appears in CoDL, which is why its fields are not underscore-prefixed.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "from",
+      "label" : "From",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection starts — the source end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `from` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "to",
+      "label" : "To",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection ends — the target end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `to` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "association", "depends_on", "enables" ],
+      "note" : "How the two ends relate. Optional: a missing or unrecognised kind reads as `association`, the bidirectional default, which is also what the card writes the moment a line is first drawn. `association` says the two are related and claims no direction; `depends_on` and `enables` claim one. Connecting B to A when A–B already exists removes that edge rather than stacking a second on top of it, so an edge is never stored twice in the two directions."
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "requirements",
+    "fromField" : "value",
+    "targetType" : "675f495d0039af23b2cb",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "decisions",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

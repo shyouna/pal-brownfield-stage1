@@ -1,0 +1,144 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "690342d2111965da3758",
+  "name" : "Business Capabilities Model Canvas",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "690342d2111965da3758",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "capability",
+    "name" : "Capability",
+    "description" : "The capability expressed as verb + noun with its business outcome",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "name",
+      "label" : "Capability Name",
+      "type" : "string",
+      "required" : false,
+      "primaryDisplay" : true
+    }, {
+      "fieldKey" : "verb",
+      "label" : "Verb",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "noun",
+      "label" : "Noun",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "outcome",
+      "label" : "Outcome",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "description",
+    "name" : "Description",
+    "description" : "What this capability is and why it matters",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-26 by text: the card reads this section only from `text` and never from `value`. Kept so content already stored under value stays writable through the MCP; new content goes in text."
+    }, {
+      "fieldKey" : "text",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "The capability in prose. This is the ONLY field the card draws in this section, and until it was declared the client's own write fell back to the section's first field (`value`) and the text came back blank on the next load."
+    } ]
+  }, {
+    "sectionKey" : "outcomes",
+    "name" : "Outcomes",
+    "description" : "Business outcomes this capability delivers",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Outcome",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "people",
+    "name" : "People",
+    "description" : "Roles and skills that realize the capability",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Role",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "process",
+    "name" : "Process",
+    "description" : "Processes through which the capability operates",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Process",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "technology",
+    "name" : "Technology",
+    "description" : "Technology and information supporting the capability",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Technology",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "performance",
+    "name" : "Performance",
+    "description" : "Performance rating tracks (0-5)",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Performance",
+      "type" : "slider",
+      "required" : false,
+      "min" : 0,
+      "max" : 5,
+      "step" : 1
+    } ]
+  }, {
+    "sectionKey" : "maturity",
+    "name" : "Maturity",
+    "description" : "Maturity rating tracks (0-5)",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Maturity",
+      "type" : "slider",
+      "required" : false,
+      "min" : 0,
+      "max" : 5,
+      "step" : 1
+    } ]
+  }, {
+    "sectionKey" : "strategy",
+    "name" : "Strategy",
+    "description" : "Strategic importance rating tracks (0-5)",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Strategy",
+      "type" : "slider",
+      "required" : false,
+      "min" : 0,
+      "max" : 5,
+      "step" : 1
+    } ]
+  } ],
+  "linksTo" : [ ]
+}

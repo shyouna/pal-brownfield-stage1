@@ -1,0 +1,149 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "690733dacc15357b9719",
+  "name" : "Power Interest Grid",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "690733dacc15357b9719",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "stakeholders",
+    "name" : "Stakeholders",
+    "description" : "The people this initiative has to carry. Power and Interest are the grid's two axes — each row is a dot.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "type" : "string",
+      "label" : "Name",
+      "fieldKey" : "name",
+      "required" : false
+    }, {
+      "type" : "canvasRef",
+      "label" : "Persona",
+      "fieldKey" : "persona_ref",
+      "required" : false,
+      "referencedCanvas" : "6769422b003bca7a31fe",
+      "referencedCanvasId" : "6769422b003bca7a31fe",
+      "referencedCanvasName" : "Persona Card",
+      "referencedCanvasDefaultSection" : "persona",
+      "referencedCanvasDefaultSectionName" : "Persona"
+    }, {
+      "type" : "string",
+      "label" : "Role",
+      "fieldKey" : "role",
+      "required" : false
+    }, {
+      "max" : 100,
+      "min" : 0,
+      "type" : "number",
+      "label" : "Power",
+      "fieldKey" : "power",
+      "required" : false
+    }, {
+      "max" : 100,
+      "min" : 0,
+      "type" : "number",
+      "label" : "Interest",
+      "fieldKey" : "interest",
+      "required" : false
+    }, {
+      "type" : "string",
+      "label" : "Current state",
+      "fieldKey" : "current_state",
+      "required" : false
+    }, {
+      "type" : "enum",
+      "label" : "Interest in initiative",
+      "fieldKey" : "interest_in_initiative",
+      "required" : false,
+      "enumValues" : [ "low_interest", "high_interest", "at_risk", "working_against" ]
+    }, {
+      "type" : "enum",
+      "label" : "Comms style",
+      "fieldKey" : "comms_style",
+      "required" : false,
+      "enumValues" : [ "email", "phone_call", "text_msg", "drive_by", "scheduled_meeting", "over_coffee" ]
+    }, {
+      "type" : "string",
+      "label" : "Personality type",
+      "fieldKey" : "personality_type",
+      "required" : false
+    }, {
+      "type" : "string",
+      "label" : "Comms frequency",
+      "fieldKey" : "comms_frequency",
+      "required" : false
+    }, {
+      "type" : "enum",
+      "label" : "Current disposition",
+      "fieldKey" : "current_disposition",
+      "required" : false,
+      "enumValues" : [ "actively_for", "happy", "neutral", "concerned", "actively_counter" ]
+    }, {
+      "type" : "enum",
+      "label" : "Needed disposition",
+      "fieldKey" : "needed_disposition",
+      "required" : false,
+      "enumValues" : [ "actively_for", "happy", "neutral", "concerned", "actively_counter" ]
+    }, {
+      "type" : "string",
+      "label" : "Personal fact",
+      "fieldKey" : "personal_fact",
+      "required" : false
+    }, {
+      "type" : "string",
+      "label" : "Trusted advisors",
+      "fieldKey" : "trusted_advisors",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "communications",
+    "name" : "Communications",
+    "description" : "The communications plan: what gets sent, by whom, to whom, how often, and where it escalates.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "type" : "string",
+      "label" : "Name of Communication",
+      "fieldKey" : "name",
+      "required" : false
+    }, {
+      "type" : "string",
+      "label" : "Format",
+      "fieldKey" : "format",
+      "required" : false
+    }, {
+      "type" : "string",
+      "label" : "Frequency",
+      "fieldKey" : "frequency",
+      "required" : false
+    }, {
+      "type" : "string",
+      "label" : "Owner",
+      "fieldKey" : "owner",
+      "required" : false
+    }, {
+      "type" : "string",
+      "label" : "Distribution",
+      "fieldKey" : "distribution",
+      "required" : false
+    }, {
+      "type" : "string",
+      "label" : "Escalation path",
+      "fieldKey" : "escalation_path",
+      "required" : false
+    }, {
+      "type" : "string",
+      "label" : "Dashboard",
+      "fieldKey" : "dashboard",
+      "required" : false
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "stakeholders",
+    "fromField" : "persona_ref",
+    "targetType" : "6769422b003bca7a31fe",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

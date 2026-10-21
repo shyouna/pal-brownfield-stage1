@@ -1,0 +1,244 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "draft-concern-canvas",
+  "name" : "BTABoK Concern Canvas",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "draft-concern-canvas",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "model_a",
+    "name" : "Model",
+    "description" : "",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Model",
+      "type" : "model",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "model_b",
+    "name" : "Model (second surface)",
+    "description" : "",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Model (second surface)",
+      "type" : "model",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "model_c",
+    "name" : "Model (third surface)",
+    "description" : "",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Model (third surface)",
+      "type" : "model",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "description",
+    "name" : "Description",
+    "description" : "What this concern establishes for this system.",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "stakeholders",
+    "name" : "Stakeholders",
+    "description" : "List every role directly impacted by decisions in this canvas",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Stakeholders",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "assumptions_caveats",
+    "name" : "Assumptions / Caveats",
+    "description" : "List unresolved constraints, design biases, trade-off consequences, and open risks.",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Assumptions / Caveats",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "viewpoint",
+    "name" : "Viewpoint",
+    "description" : "",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Viewpoint",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "domain",
+    "name" : "Domain",
+    "description" : "Which domain does this card decompose? e.g. Order Management",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Domain",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "concern_area_1",
+    "name" : "Concern area 1",
+    "description" : "",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Concern area 1",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision_name",
+      "referencedCanvasDefaultSectionName" : "Decision"
+    } ]
+  }, {
+    "sectionKey" : "concern_area_2",
+    "name" : "Concern area 2",
+    "description" : "",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Concern area 2",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision_name",
+      "referencedCanvasDefaultSectionName" : "Decision"
+    } ]
+  }, {
+    "sectionKey" : "concern_area_3",
+    "name" : "Concern area 3",
+    "description" : "",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Concern area 3",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision_name",
+      "referencedCanvasDefaultSectionName" : "Decision"
+    } ]
+  }, {
+    "sectionKey" : "concern_area_4",
+    "name" : "Concern area 4",
+    "description" : "",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Concern area 4",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision_name",
+      "referencedCanvasDefaultSectionName" : "Decision"
+    } ]
+  }, {
+    "sectionKey" : "concern_area_5",
+    "name" : "Concern area 5",
+    "description" : "",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Concern area 5",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision_name",
+      "referencedCanvasDefaultSectionName" : "Decision"
+    } ]
+  }, {
+    "sectionKey" : "concern_selection",
+    "name" : "Concern selection",
+    "description" : "",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Concern selection",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "model_choice",
+    "name" : "Model choice",
+    "description" : "",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Model choice",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "model_primary",
+    "name" : "Primary model",
+    "description" : "",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Primary model",
+      "type" : "string",
+      "required" : false
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "concern_area_1",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "concern_area_2",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "concern_area_3",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "concern_area_4",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "concern_area_5",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

@@ -1,0 +1,13 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 758,
+    "typeKey" : "draft-decision-cascade-card",
+    "typeName" : "draft-decision-cascade-card",
+    "name" : "draft-decision-cascade-card #1",
+    "version" : 1,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/draft-decision-cascade-card.codl-def.json",
+  "sections" : { }
+}

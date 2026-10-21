@@ -1,0 +1,143 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "69a701870009e16c7959",
+  "name" : "OKR Card (Objectives and Key Results)",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "69a701870009e16c7959",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "objective",
+    "name" : "Objective",
+    "description" : "Concise and ambitious goal aligned to strategic direction",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Objective",
+      "type" : "longtext",
+      "required" : false,
+      "primaryDisplay" : true
+    } ]
+  }, {
+    "sectionKey" : "key_results",
+    "name" : "Key Results",
+    "description" : "Quantifiable SMART metrics measuring progress — limit to 3-5",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Key Result",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "measure",
+      "label" : "Measure",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "baseline",
+      "label" : "Baseline",
+      "type" : "number",
+      "required" : false
+    }, {
+      "fieldKey" : "target",
+      "label" : "Target",
+      "type" : "number",
+      "required" : false
+    }, {
+      "fieldKey" : "due_date",
+      "label" : "Due",
+      "type" : "date",
+      "required" : false
+    }, {
+      "fieldKey" : "progress",
+      "label" : "Progress",
+      "type" : "slider",
+      "required" : false,
+      "min" : 0,
+      "max" : 100,
+      "step" : 5
+    }, {
+      "fieldKey" : "benefits_ref",
+      "label" : "Benefit Card",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "benefit-card-layout-b",
+      "referencedCanvasId" : "benefit-card-layout-b",
+      "referencedCanvasName" : "Benefit Card",
+      "referencedCanvasDefaultSection" : "benefit"
+    } ]
+  }, {
+    "sectionKey" : "objective_alignment",
+    "name" : "Objective Alignment",
+    "description" : "How the objective aligns to the card's four alignment axes",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Alignment",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "outcome_area",
+      "label" : "Alignment axis",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "our_purpose_mission", "our_strategy", "my_boss_my_customer", "my_team_my_stakeholders" ]
+    } ]
+  }, {
+    "sectionKey" : "key_result_retrospective",
+    "name" : "Key Result Retrospective",
+    "description" : "Review of measurable outcomes after program completion",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Retrospective",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "value_learning",
+    "name" : "Value & Learning",
+    "description" : "Retrospective insights and learning for future improvement",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Value & Learning",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "dependencies",
+    "name" : "Connections",
+    "description" : "Connections between items on this card. One item per edge, so an edge has its own itemKey and is individually addressable and individually deletable. Both ends are items on THIS entity; a link to another card is an item-level canvasRef (ADR-101), a different mechanism with different meaning, not this one stretched. Content, not layout — a connection is a fact about the plan, it exports and it appears in CoDL, which is why its fields are not underscore-prefixed.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "from",
+      "label" : "From",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection starts — the source end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `from` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "to",
+      "label" : "To",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection ends — the target end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `to` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "association", "depends_on", "enables" ],
+      "note" : "How the two ends relate. Optional: a missing or unrecognised kind reads as `association`, the bidirectional default, which is also what the card writes the moment a line is first drawn. `association` says the two are related and claims no direction; `depends_on` and `enables` claim one. Connecting B to A when A–B already exists removes that edge rather than stacking a second on top of it, so an edge is never stored twice in the two directions."
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "key_results",
+    "fromField" : "benefits_ref",
+    "targetType" : "benefit-card-layout-b",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

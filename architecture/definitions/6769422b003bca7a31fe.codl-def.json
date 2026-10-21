@@ -1,0 +1,226 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "6769422b003bca7a31fe",
+  "name" : "Persona Card",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "6769422b003bca7a31fe",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "persona",
+    "name" : "Persona",
+    "description" : "Name of the persona, ideally representing a realistic individual",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Name",
+      "type" : "string",
+      "required" : false,
+      "primaryDisplay" : true
+    } ]
+  }, {
+    "sectionKey" : "scenario",
+    "name" : "Scenario",
+    "description" : "Scenario name aligned to customer journey interaction level",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Scenario",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "68fa4f6b022c0cea3fb0",
+      "referencedCanvasId" : "68fa4f6b022c0cea3fb0",
+      "referencedCanvasName" : "Customer Journey Map",
+      "referencedCanvasDefaultSection" : "stages"
+    } ]
+  }, {
+    "sectionKey" : "expectations",
+    "name" : "Expectations",
+    "description" : "Customer goals, motivations, and concerns in the scenario",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Expectation",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "age",
+    "name" : "Age",
+    "description" : "Age or age range of the persona",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Age",
+      "type" : "number",
+      "required" : false,
+      "min" : 0,
+      "max" : 120
+    } ]
+  }, {
+    "sectionKey" : "sex",
+    "name" : "Sex",
+    "description" : "Gender identity of the persona",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Sex",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "Female", "Male", "Non-binary", "Prefer not to say", "Other" ]
+    } ]
+  }, {
+    "sectionKey" : "income",
+    "name" : "Income",
+    "description" : "Income amount with currency",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Income",
+      "type" : "number",
+      "required" : false,
+      "min" : 0,
+      "format" : "currency"
+    } ]
+  }, {
+    "sectionKey" : "job_to_be_done",
+    "name" : "Job To Be Done",
+    "description" : "Core tasks and objectives the persona must accomplish",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Job",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "personal_story",
+    "name" : "Personal Story",
+    "description" : "Detailed narrative describing the persona's life and characteristics",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Story",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "seeing",
+    "name" : "Seeing",
+    "description" : "Visual and environmental context experienced by the persona",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Seeing",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "68fa4f6b022c0cea3fb0",
+      "referencedCanvasId" : "68fa4f6b022c0cea3fb0",
+      "referencedCanvasName" : "Customer Journey Map",
+      "referencedCanvasDefaultSection" : "stages"
+    } ]
+  }, {
+    "sectionKey" : "saying",
+    "name" : "Saying",
+    "description" : "What the persona expresses, believes, or communicates",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Saying",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "68fa4f6b022c0cea3fb0",
+      "referencedCanvasId" : "68fa4f6b022c0cea3fb0",
+      "referencedCanvasName" : "Customer Journey Map",
+      "referencedCanvasDefaultSection" : "stages"
+    } ]
+  }, {
+    "sectionKey" : "doing",
+    "name" : "Doing",
+    "description" : "Actions taken by the persona within the scenario",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Doing",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "68fa4f6b022c0cea3fb0",
+      "referencedCanvasId" : "68fa4f6b022c0cea3fb0",
+      "referencedCanvasName" : "Customer Journey Map",
+      "referencedCanvasDefaultSection" : "stages"
+    } ]
+  }, {
+    "sectionKey" : "hearing",
+    "name" : "Hearing",
+    "description" : "External inputs such as conversations, media, and feedback",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Hearing",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "68fa4f6b022c0cea3fb0",
+      "referencedCanvasId" : "68fa4f6b022c0cea3fb0",
+      "referencedCanvasName" : "Customer Journey Map",
+      "referencedCanvasDefaultSection" : "stages"
+    } ]
+  }, {
+    "sectionKey" : "dependencies",
+    "name" : "Connections",
+    "description" : "Connections between items on this card. One item per edge, so an edge has its own itemKey and is individually addressable and individually deletable. Both ends are items on THIS entity; a link to another card is an item-level canvasRef (ADR-101), a different mechanism with different meaning, not this one stretched. Content, not layout — a connection is a fact about the plan, it exports and it appears in CoDL, which is why its fields are not underscore-prefixed.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "from",
+      "label" : "From",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection starts — the source end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `from` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "to",
+      "label" : "To",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection ends — the target end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `to` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "association", "depends_on", "enables" ],
+      "note" : "How the two ends relate. Optional: a missing or unrecognised kind reads as `association`, the bidirectional default, which is also what the card writes the moment a line is first drawn. `association` says the two are related and claims no direction; `depends_on` and `enables` claim one. Connecting B to A when A–B already exists removes that edge rather than stacking a second on top of it, so an edge is never stored twice in the two directions."
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "scenario",
+    "fromField" : "value",
+    "targetType" : "68fa4f6b022c0cea3fb0",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "seeing",
+    "fromField" : "value",
+    "targetType" : "68fa4f6b022c0cea3fb0",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "saying",
+    "fromField" : "value",
+    "targetType" : "68fa4f6b022c0cea3fb0",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "doing",
+    "fromField" : "value",
+    "targetType" : "68fa4f6b022c0cea3fb0",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "hearing",
+    "fromField" : "value",
+    "targetType" : "68fa4f6b022c0cea3fb0",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

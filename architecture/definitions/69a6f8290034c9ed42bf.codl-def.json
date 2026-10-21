@@ -1,0 +1,373 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "69a6f8290034c9ed42bf",
+  "name" : "Service Blueprint Canvas",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "69a6f8290034c9ed42bf",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "capability_service",
+    "name" : "Capability / Service",
+    "description" : "The service this blueprint describes",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Capability / Service",
+      "type" : "string",
+      "required" : false,
+      "primaryDisplay" : true,
+      "note" : "SUPERSEDED 2026-09-27 by `name` and `description`: the card reads this section only from `name` and `description` and never from `value`. Kept so content already stored under value stays writable through the MCP; new content goes in `name` and `description`."
+    }, {
+      "fieldKey" : "name",
+      "label" : "Name",
+      "type" : "string",
+      "required" : false,
+      "note" : "The capability or service the blueprint is of. One of the two cells the card draws in this box (`ServiceBlueprintCanvas.tsx` line 663, written at 667); until it was declared an MCP write of it was refused by name while the same box typed by hand went in."
+    }, {
+      "fieldKey" : "description",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "The capability or service in prose (`ServiceBlueprintCanvas.tsx` line 670, written at 675). `longtext`, because CoDL `text` is prose of any length."
+    } ]
+  }, {
+    "sectionKey" : "scenario",
+    "name" : "Scenario",
+    "description" : "The journey scenario being blueprinted",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Scenario",
+      "type" : "string",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-27 by `name`: the card reads this section only from `name` and never from `value`. Kept so content already stored under value stays writable through the MCP; new content goes in `name`."
+    }, {
+      "fieldKey" : "name",
+      "label" : "Scenario",
+      "type" : "string",
+      "required" : false,
+      "note" : "The scenario the blueprint walks through — the ONLY cell the card draws in this box (`ServiceBlueprintCanvas.tsx` line 687, written at 691)."
+    } ]
+  }, {
+    "sectionKey" : "outcomes",
+    "name" : "Outcomes",
+    "description" : "What the customer gets when this goes right",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Outcomes",
+      "type" : "string",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-27 by `description`: the card reads this section only from `description` and never from `value`. Kept so content already stored under value stays writable through the MCP; new content goes in `description`."
+    }, {
+      "fieldKey" : "description",
+      "label" : "Outcomes",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "The outcomes, in prose — the only cell the card draws in this box (`ServiceBlueprintCanvas.tsx` line 701, written at 705)."
+    } ]
+  }, {
+    "sectionKey" : "stakeholders",
+    "name" : "Stakeholders",
+    "description" : "Who is involved. Links to Persona cards.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Stakeholders",
+      "type" : "string",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-27 by `name` and `description`: the card reads this section only from `name` and `description` and never from `value`. Kept so content already stored under value stays writable through the MCP; new content goes in `name` and `description`."
+    }, {
+      "fieldKey" : "name",
+      "label" : "Name",
+      "type" : "string",
+      "required" : false,
+      "note" : "A stakeholder's name, one per roster row (`ServiceBlueprintCanvas.tsx` line 887; a new row is created by writing it, line 717)."
+    }, {
+      "fieldKey" : "description",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "That stakeholder in prose, the roster row’s second line (`ServiceBlueprintCanvas.tsx` line 894)."
+    } ]
+  }, {
+    "sectionKey" : "evidence",
+    "name" : "Online/Physical Evidence",
+    "description" : "What the customer sees or touches at each step",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Online/Physical Evidence",
+      "type" : "string",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-25 by name + description: the card never reads value on a lane item (it draws name as the cell title and description under it). Kept so cells already stored under value stay writable; new content goes in name/description."
+    }, {
+      "fieldKey" : "name",
+      "label" : "Name",
+      "type" : "string",
+      "required" : false,
+      "note" : "What the item is, in a few words. The card draws it as the cell's title."
+    }, {
+      "fieldKey" : "description",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "The item in more detail. The card draws it under the name."
+    }, {
+      "fieldKey" : "column",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a stages item. The column this item sits in."
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this band item — never its name. The named row this cell sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    } ]
+  }, {
+    "sectionKey" : "customer_actions",
+    "name" : "Customer Actions",
+    "description" : "What the customer does, in order",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Customer Actions",
+      "type" : "string",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-25 by name + description: the card never reads value on a lane item (it draws name as the cell title and description under it). Kept so cells already stored under value stay writable; new content goes in name/description."
+    }, {
+      "fieldKey" : "name",
+      "label" : "Name",
+      "type" : "string",
+      "required" : false,
+      "note" : "What the item is, in a few words. The card draws it as the cell's title."
+    }, {
+      "fieldKey" : "description",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "The item in more detail. The card draws it under the name."
+    }, {
+      "fieldKey" : "column",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a stages item. The column this item sits in."
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this band item — never its name. The named row this cell sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    } ]
+  }, {
+    "sectionKey" : "front_stage_actions",
+    "name" : "Front Stage Actions",
+    "description" : "Staff actions the customer sees — above the line of interaction",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Front Stage Actions",
+      "type" : "string",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-25 by name + description: the card never reads value on a lane item (it draws name as the cell title and description under it). Kept so cells already stored under value stay writable; new content goes in name/description."
+    }, {
+      "fieldKey" : "name",
+      "label" : "Name",
+      "type" : "string",
+      "required" : false,
+      "note" : "What the item is, in a few words. The card draws it as the cell's title."
+    }, {
+      "fieldKey" : "description",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "The item in more detail. The card draws it under the name."
+    }, {
+      "fieldKey" : "column",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a stages item. The column this item sits in."
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this band item — never its name. The named row this cell sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    } ]
+  }, {
+    "sectionKey" : "back_stage_actions",
+    "name" : "Back Stage Actions",
+    "description" : "Staff actions the customer does not see — below the line of visibility",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Back Stage Actions",
+      "type" : "string",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-25 by name + description: the card never reads value on a lane item (it draws name as the cell title and description under it). Kept so cells already stored under value stay writable; new content goes in name/description."
+    }, {
+      "fieldKey" : "name",
+      "label" : "Name",
+      "type" : "string",
+      "required" : false,
+      "note" : "What the item is, in a few words. The card draws it as the cell's title."
+    }, {
+      "fieldKey" : "description",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "The item in more detail. The card draws it under the name."
+    }, {
+      "fieldKey" : "column",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a stages item. The column this item sits in."
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this band item — never its name. The named row this cell sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    } ]
+  }, {
+    "sectionKey" : "supporting_processes_and_systems",
+    "name" : "Supporting Processes and Systems",
+    "description" : "Internal processes and systems each step depends on",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Supporting Processes and Systems",
+      "type" : "string",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-25 by name + description: the card never reads value on a lane item (it draws name as the cell title and description under it). Kept so cells already stored under value stay writable; new content goes in name/description."
+    }, {
+      "fieldKey" : "name",
+      "label" : "Name",
+      "type" : "string",
+      "required" : false,
+      "note" : "What the item is, in a few words. The card draws it as the cell's title."
+    }, {
+      "fieldKey" : "description",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "The item in more detail. The card draws it under the name."
+    }, {
+      "fieldKey" : "column",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a stages item. The column this item sits in."
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this band item — never its name. The named row this cell sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    } ]
+  }, {
+    "sectionKey" : "technology",
+    "name" : "Technology",
+    "description" : "Technology supporting the steps",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Technology",
+      "type" : "string",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-25 by name + description: the card never reads value on a lane item (it draws name as the cell title and description under it). Kept so cells already stored under value stay writable; new content goes in name/description."
+    }, {
+      "fieldKey" : "name",
+      "label" : "Name",
+      "type" : "string",
+      "required" : false,
+      "note" : "What the item is, in a few words. The card draws it as the cell's title."
+    }, {
+      "fieldKey" : "description",
+      "label" : "Description",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "The item in more detail. The card draws it under the name."
+    }, {
+      "fieldKey" : "column",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a stages item. The column this item sits in."
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item whose `lane` is this band item — never its name. The named row this cell sits on inside its lane. Empty or absent means the lane's unsorted line, which is drawn first so nothing is ever hidden."
+    } ]
+  }, {
+    "sectionKey" : "notes",
+    "name" : "Notes",
+    "description" : "Anything the blueprint records that has no other home",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Notes",
+      "type" : "string",
+      "required" : false,
+      "note" : "SUPERSEDED 2026-09-27 by `description`: the card reads this section only from `description` and never from `value`. Kept so content already stored under value stays writable through the MCP; new content goes in `description`."
+    }, {
+      "fieldKey" : "description",
+      "label" : "Notes",
+      "type" : "longtext",
+      "required" : false,
+      "note" : "The blueprint’s notes — the only cell the card draws in this box (`ServiceBlueprintCanvas.tsx` line 839, written at 844)."
+    } ]
+  }, {
+    "sectionKey" : "stages",
+    "name" : "Stages",
+    "description" : "The steps of the scenario, left to right. Ergane-minted: the published CoDL organises this canvas by lane, not by stage.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Stage",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "order",
+      "label" : "Order",
+      "type" : "number",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "rows",
+    "name" : "Rows",
+    "description" : "Named rows inside each band. Ergane-minted: the published CoDL organises this canvas by band only, and a band's cards ran on one line.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Row name",
+      "type" : "string",
+      "required" : false,
+      "note" : "The row's name, as the gutter prints it. May be empty — a row with no name is still a row."
+    }, {
+      "fieldKey" : "lane",
+      "label" : "Band",
+      "type" : "string",
+      "required" : false,
+      "note" : "The sectionKey of the band this row belongs to (e.g. \"customer_actions\") — a section key, NOT an itemKey and not a label. A row whose lane names no band of this canvas is drawn nowhere."
+    }, {
+      "fieldKey" : "order",
+      "label" : "Order",
+      "type" : "number",
+      "required" : false,
+      "note" : "The row's place among its lane's rows, from 1. A row with no order sorts last.",
+      "min" : 1
+    } ]
+  } ],
+  "linksTo" : [ ]
+}

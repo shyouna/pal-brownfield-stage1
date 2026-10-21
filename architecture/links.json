@@ -1,0 +1,46 @@
+{
+  "solutionId" : 43,
+  "edges" : [ {
+    "sourceEntityId" : 1873,
+    "sourceSection" : "requirements",
+    "sourceItemKey" : "it-mvevuj63-laz",
+    "sourceField" : "value",
+    "targetEntityId" : 759,
+    "kind" : "ref"
+  }, {
+    "sourceEntityId" : 1873,
+    "sourceSection" : "requirements",
+    "sourceItemKey" : "it-mvhimu6t-wqz",
+    "sourceField" : "value",
+    "targetEntityId" : 2073,
+    "kind" : "ref"
+  }, {
+    "sourceEntityId" : 2076,
+    "sourceSection" : "traceability",
+    "sourceItemKey" : "it-mvhpxiag-6rf",
+    "sourceField" : "context_view_ref",
+    "targetEntityId" : 1873,
+    "kind" : "ref"
+  }, {
+    "sourceEntityId" : 2086,
+    "sourceSection" : "requirements",
+    "sourceItemKey" : "it-mvhqpt33-tvn",
+    "sourceField" : "value",
+    "targetEntityId" : 2078,
+    "kind" : "ref"
+  }, {
+    "sourceEntityId" : 2086,
+    "sourceSection" : "requirements",
+    "sourceItemKey" : "it-mvhqpxr0-rqw",
+    "sourceField" : "value",
+    "targetEntityId" : 2079,
+    "kind" : "ref"
+  }, {
+    "sourceEntityId" : 2084,
+    "sourceSection" : "traceability",
+    "sourceItemKey" : "it-mvhqq39c-ms7",
+    "sourceField" : "context_view_ref",
+    "targetEntityId" : 2086,
+    "kind" : "ref"
+  } ]
+}

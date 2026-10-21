@@ -1,0 +1,8 @@
+{
+  "modelDocument" : "1873-cv-test1-model.calm.json",
+  "sourceEntityId" : 1873,
+  "sourceSectionKey" : "model",
+  "sourceFieldKey" : "value",
+  "notation" : "calm",
+  "shapeLinks" : [ ]
+}

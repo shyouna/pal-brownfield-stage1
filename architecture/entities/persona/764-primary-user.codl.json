@@ -1,0 +1,12 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 764,
+    "typeKey" : "persona",
+    "name" : "Primary User",
+    "version" : 1,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/persona.codl-def.json",
+  "sections" : { }
+}

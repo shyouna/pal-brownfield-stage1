@@ -1,0 +1,361 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "68fa537c2c5dbd7b836c",
+  "name" : "Strategic Roadmap",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "68fa537c2c5dbd7b836c",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "scope_vision",
+    "name" : "Scope and Vision",
+    "description" : "The scope and strategic direction of the roadmap",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Scope and Vision",
+      "type" : "longtext",
+      "required" : false,
+      "primaryDisplay" : true
+    } ]
+  }, {
+    "sectionKey" : "time",
+    "name" : "Timeframes",
+    "description" : "The time bands across the roadmap",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Timeframe",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "order",
+      "label" : "Order",
+      "type" : "number",
+      "required" : false,
+      "min" : 1
+    } ]
+  }, {
+    "sectionKey" : "initiatives",
+    "name" : "Initiatives",
+    "description" : "Initiatives (business cases) prioritised on the roadmap",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Initiative",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "business_case_ref",
+      "label" : "Business Case",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "68ff77c07e27eebe22af",
+      "referencedCanvasId" : "68ff77c07e27eebe22af",
+      "referencedCanvasName" : "Lean Business Case",
+      "referencedCanvasDefaultSection" : "need"
+    }, {
+      "fieldKey" : "status",
+      "label" : "Lifecycle stage",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "innovation", "strategy", "plan", "transform", "utilize_measure", "decommission" ]
+    }, {
+      "fieldKey" : "value_score",
+      "label" : "Value",
+      "type" : "slider",
+      "required" : false,
+      "min" : 0,
+      "max" : 10,
+      "step" : 1
+    }, {
+      "fieldKey" : "complexity",
+      "label" : "Complexity",
+      "type" : "slider",
+      "required" : false,
+      "min" : 0,
+      "max" : 10,
+      "step" : 1
+    }, {
+      "fieldKey" : "risk",
+      "label" : "Risk",
+      "type" : "slider",
+      "required" : false,
+      "min" : 0,
+      "max" : 10,
+      "step" : 1
+    }, {
+      "fieldKey" : "principles",
+      "label" : "Principles",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "693c585d0005308a3d19",
+      "referencedCanvasId" : "693c585d0005308a3d19",
+      "referencedCanvasName" : "Principle Card",
+      "referencedCanvasDefaultSection" : "content"
+    }, {
+      "fieldKey" : "principles_score",
+      "label" : "Principles",
+      "type" : "slider",
+      "required" : false,
+      "min" : 0,
+      "max" : 10,
+      "step" : 1
+    }, {
+      "fieldKey" : "sizing",
+      "label" : "Sizing",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "xs", "s", "m", "l", "xl" ]
+    }, {
+      "fieldKey" : "column",
+      "label" : "Timeframe",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "product_roadmap_ref",
+      "label" : "Product Roadmap",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "69072b9a2fe987e8b980",
+      "referencedCanvasId" : "69072b9a2fe987e8b980",
+      "referencedCanvasName" : "Product Roadmap",
+      "referencedCanvasDefaultSection" : "time"
+    }, {
+      "fieldKey" : "stakeholder_ref",
+      "label" : "Stakeholder",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "6769422b003bca7a31fe",
+      "referencedCanvasId" : "6769422b003bca7a31fe",
+      "referencedCanvasName" : "Persona Card",
+      "referencedCanvasDefaultSection" : "persona",
+      "referencedCanvasDefaultSectionName" : "Persona"
+    }, {
+      "fieldKey" : "span",
+      "label" : "Span",
+      "type" : "number",
+      "required" : false,
+      "note" : "How many bands the item covers, in bands. 1 is one band; an item with no span reads as 1. Content, not layout — a duration survives export and appears in CoDL, which is why it is not underscore-prefixed.",
+      "min" : 0
+    }, {
+      "fieldKey" : "offset",
+      "label" : "Offset",
+      "type" : "number",
+      "required" : false,
+      "note" : "Where inside the anchor band the item starts, in [0,1). Written only on a DIVISIBLE (interval) axis: its absence is the signal that the axis has no inside, so an ordinal axis must never write a zero here.",
+      "min" : 0
+    } ]
+  }, {
+    "sectionKey" : "goals_objectives",
+    "name" : "Goals, Objectives and Deadlines",
+    "description" : "Objectives taken from strategy or from OKRs",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Objective",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "deadline",
+      "label" : "Deadline",
+      "type" : "date",
+      "required" : false
+    }, {
+      "fieldKey" : "okr_ref",
+      "label" : "OKR",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "69a701870009e16c7959",
+      "referencedCanvasId" : "69a701870009e16c7959",
+      "referencedCanvasName" : "OKR Card",
+      "referencedCanvasDefaultSection" : "objective"
+    } ]
+  }, {
+    "sectionKey" : "transitions",
+    "name" : "Transitions",
+    "description" : "Major events, milestones or points of change",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Transition",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "date",
+      "label" : "Date",
+      "type" : "date",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "key_dependencies",
+    "name" : "Key Dependencies",
+    "description" : "Capabilities, services or projects this roadmap depends on",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Dependency",
+      "type" : "string",
+      "required" : false
+    }, {
+      "fieldKey" : "capability_ref",
+      "label" : "Capability",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "690342d2111965da3758",
+      "referencedCanvasId" : "690342d2111965da3758",
+      "referencedCanvasName" : "Business Capability Card",
+      "referencedCanvasDefaultSection" : "capability"
+    } ]
+  }, {
+    "sectionKey" : "risks",
+    "name" : "Risks",
+    "description" : "Major risks related to the initiative",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Risk",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "rows",
+    "name" : "Rows",
+    "description" : "The rows under an initiative's lane. A row is a piece of work, a task or a sub-initiative; it carries a name and no scores. The lane (the initiative) carries the scores.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Row name",
+      "type" : "string",
+      "required" : false,
+      "note" : "The row's name, as the gutter prints it. May be empty."
+    }, {
+      "fieldKey" : "initiative",
+      "label" : "Lane",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of an `initiatives` item — never its name. The lane this row belongs to. A row naming no initiative is drawn nowhere."
+    }, {
+      "fieldKey" : "order",
+      "label" : "Order",
+      "type" : "number",
+      "required" : false,
+      "note" : "The row's place among its lane's rows, from 1. A row with no order sorts last.",
+      "min" : 1
+    } ]
+  }, {
+    "sectionKey" : "schedule",
+    "name" : "Schedule",
+    "description" : "Time boxes on a row. A row may hold many; a box has a label and a place on the timeline and no values of its own.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Time box",
+      "type" : "string",
+      "required" : false,
+      "note" : "What the bar says. May be empty."
+    }, {
+      "fieldKey" : "row",
+      "label" : "Row",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `rows` item — never its name. The row this box sits on. Empty or absent puts the box on its lane's unsorted row."
+    }, {
+      "fieldKey" : "column",
+      "label" : "Starts in timeframe",
+      "type" : "string",
+      "required" : false,
+      "note" : "itemKey of a `time` item — never its label. The band the box starts in. A box with no column is on no band and is not drawn."
+    }, {
+      "fieldKey" : "span",
+      "label" : "Span",
+      "type" : "number",
+      "required" : false,
+      "note" : "How many bands the item covers, in bands. 1 is one band; an item with no span reads as 1. Content, not layout — a duration survives export and appears in CoDL, which is why it is not underscore-prefixed.",
+      "min" : 0
+    }, {
+      "fieldKey" : "offset",
+      "label" : "Offset",
+      "type" : "number",
+      "required" : false,
+      "note" : "Where inside the anchor band the item starts, in [0,1). Written only on a DIVISIBLE (interval) axis: its absence is the signal that the axis has no inside, so an ordinal axis must never write a zero here.",
+      "min" : 0
+    }, {
+      "fieldKey" : "start",
+      "label" : "Starts",
+      "type" : "string",
+      "required" : false,
+      "note" : "First day covered, `YYYY-MM-DD`. Typed `string`, not `date`, because the card reads this cell's TEXT and parses exactly `YYYY-MM-DD`: a `date`-typed cell is stored as a date-time, and this service's `date` branch refuses a plain day outright. Where a box carries both dates and a band placement (`column`/`offset`/`span`), the dates win and the band cells are read no further — they are never rewritten and never deleted."
+    }, {
+      "fieldKey" : "end",
+      "label" : "Ends",
+      "type" : "string",
+      "required" : false,
+      "note" : "Last day covered, inclusive, `YYYY-MM-DD` — a one-day box has `end` equal to `start`. Typed `string` for the same reason as `start`. An `end` earlier than its `start` is read as the start, so the box never draws backwards."
+    } ]
+  }, {
+    "sectionKey" : "dependencies",
+    "name" : "Connections",
+    "description" : "Connections between items on this card. One item per edge, so an edge has its own itemKey and is individually addressable and individually deletable. Both ends are items on THIS entity; a link to another card is an item-level canvasRef (ADR-101), a different mechanism with different meaning, not this one stretched. Content, not layout — a connection is a fact about the plan, it exports and it appears in CoDL, which is why its fields are not underscore-prefixed.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "from",
+      "label" : "From",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection starts — the source end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `from` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "to",
+      "label" : "To",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection ends — the target end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `to` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "association", "depends_on", "enables" ],
+      "note" : "How the two ends relate. Optional: a missing or unrecognised kind reads as `association`, the bidirectional default, which is also what the card writes the moment a line is first drawn. `association` says the two are related and claims no direction; `depends_on` and `enables` claim one. Connecting B to A when A–B already exists removes that edge rather than stacking a second on top of it, so an edge is never stored twice in the two directions."
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "initiatives",
+    "fromField" : "business_case_ref",
+    "targetType" : "68ff77c07e27eebe22af",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "initiatives",
+    "fromField" : "principles",
+    "targetType" : "693c585d0005308a3d19",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "initiatives",
+    "fromField" : "product_roadmap_ref",
+    "targetType" : "69072b9a2fe987e8b980",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "initiatives",
+    "fromField" : "stakeholder_ref",
+    "targetType" : "6769422b003bca7a31fe",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "goals_objectives",
+    "fromField" : "okr_ref",
+    "targetType" : "69a701870009e16c7959",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "key_dependencies",
+    "fromField" : "capability_ref",
+    "targetType" : "690342d2111965da3758",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

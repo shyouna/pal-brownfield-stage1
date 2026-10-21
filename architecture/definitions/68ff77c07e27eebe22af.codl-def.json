@@ -1,0 +1,297 @@
+{
+  "codlVersion" : "2",
+  "typeIri" : "68ff77c07e27eebe22af",
+  "name" : "Business Case",
+  "provenance" : {
+    "definitionSource" : "metis",
+    "canvasId" : "68ff77c07e27eebe22af",
+    "btabokLibrary" : "https://iasa-global.github.io/btabok/",
+    "readOnly" : true
+  },
+  "sections" : [ {
+    "sectionKey" : "need",
+    "name" : "Need",
+    "description" : "Drivers for the project, derived from OKRs — not the approach or solution",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Need",
+      "type" : "longtext",
+      "required" : false,
+      "primaryDisplay" : true
+    } ]
+  }, {
+    "sectionKey" : "need_model",
+    "name" : "Need — OKRs",
+    "description" : "OKRs this need is derived from",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "OKR",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "69a701870009e16c7959",
+      "referencedCanvasId" : "69a701870009e16c7959",
+      "referencedCanvasName" : "OKR Card",
+      "referencedCanvasDefaultSection" : "objective"
+    } ]
+  }, {
+    "sectionKey" : "approach",
+    "name" : "Approach",
+    "description" : "Proposed solution to the need — the product or project description",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Approach",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "approach_model",
+    "name" : "Approach — Roadmap",
+    "description" : "The product roadmap delivering this approach",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Product Roadmap",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "69072b9a2fe987e8b980",
+      "referencedCanvasId" : "69072b9a2fe987e8b980",
+      "referencedCanvasName" : "Product Roadmap",
+      "referencedCanvasDefaultSection" : "time"
+    } ]
+  }, {
+    "sectionKey" : "benefit",
+    "name" : "Benefit(s) / Value",
+    "description" : "Measured or expected benefits of the solution",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Benefits",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "benefit_refs",
+    "name" : "Benefits Realization",
+    "description" : "Benefits realization views measuring this case",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Benefit Card",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "benefit-card-layout-b",
+      "referencedCanvasId" : "benefit-card-layout-b",
+      "referencedCanvasName" : "Benefit Card",
+      "referencedCanvasDefaultSection" : "benefit"
+    } ]
+  }, {
+    "sectionKey" : "cost",
+    "name" : "Cost(s)",
+    "description" : "Expected costs of the solution, product or project",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Costs",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "total_benefit",
+    "name" : "Total Benefit",
+    "description" : "Native canvas section",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Total Benefit",
+      "type" : "number",
+      "required" : false,
+      "format" : "currency"
+    } ]
+  }, {
+    "sectionKey" : "benefit_confidence",
+    "name" : "Benefit Confidence",
+    "description" : "Native canvas section",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Confidence",
+      "type" : "slider",
+      "required" : false,
+      "min" : 0,
+      "max" : 10,
+      "step" : 1
+    } ]
+  }, {
+    "sectionKey" : "total_cost",
+    "name" : "Total Cost",
+    "description" : "Native canvas section",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Total Cost",
+      "type" : "number",
+      "required" : false,
+      "format" : "currency"
+    } ]
+  }, {
+    "sectionKey" : "cost_confidence",
+    "name" : "Cost Confidence",
+    "description" : "Native canvas section",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Confidence",
+      "type" : "slider",
+      "required" : false,
+      "min" : 0,
+      "max" : 10,
+      "step" : 1
+    } ]
+  }, {
+    "sectionKey" : "timeframe",
+    "name" : "Timeframe",
+    "description" : "Native canvas section",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Timeframe",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "npv_irr",
+    "name" : "NPV / IRR",
+    "description" : "Native canvas section",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "NPV/IRR",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "roi_percent",
+    "name" : "ROI %",
+    "description" : "Native canvas section",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "ROI %",
+      "type" : "number",
+      "required" : false,
+      "min" : -100,
+      "max" : 1000
+    } ]
+  }, {
+    "sectionKey" : "breakeven_point",
+    "name" : "Breakeven Point",
+    "description" : "Native canvas section",
+    "cardinality" : "one",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Breakeven",
+      "type" : "string",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "considerations",
+    "name" : "Considerations / Competition / Alternatives / Risks",
+    "description" : "Other alternatives and risks to the approach",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Consideration",
+      "type" : "longtext",
+      "required" : false
+    } ]
+  }, {
+    "sectionKey" : "decision_refs",
+    "name" : "Related Decisions",
+    "description" : "Architecture decisions arising from this case",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Decision",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "696364be003cc58ff2da",
+      "referencedCanvasId" : "696364be003cc58ff2da",
+      "referencedCanvasName" : "Architecture Decision Record",
+      "referencedCanvasDefaultSection" : "decision_name"
+    } ]
+  }, {
+    "sectionKey" : "asr_refs",
+    "name" : "Traceability — Requirements",
+    "description" : "Native canvas section",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "value",
+      "label" : "Requirement",
+      "type" : "string",
+      "required" : false,
+      "referencedCanvas" : "675f495d0039af23b2cb",
+      "referencedCanvasId" : "675f495d0039af23b2cb",
+      "referencedCanvasName" : "Architecturally Significant Requirement",
+      "referencedCanvasDefaultSection" : "asr_and_context"
+    } ]
+  }, {
+    "sectionKey" : "dependencies",
+    "name" : "Connections",
+    "description" : "Connections between items on this card. One item per edge, so an edge has its own itemKey and is individually addressable and individually deletable. Both ends are items on THIS entity; a link to another card is an item-level canvasRef (ADR-101), a different mechanism with different meaning, not this one stretched. Content, not layout — a connection is a fact about the plan, it exports and it appears in CoDL, which is why its fields are not underscore-prefixed.",
+    "cardinality" : "many",
+    "fields" : [ {
+      "fieldKey" : "from",
+      "label" : "From",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection starts — the source end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `from` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "to",
+      "label" : "To",
+      "type" : "string",
+      "required" : false,
+      "note" : "Where the connection ends — the target end of the edge, as `<sectionKey>/<itemKey>` — the section key, one `/`, then the item key, e.g. `technology/it-lz4k2p`. Never a label and never a bare itemKey: the card splits on the FIRST `/` and discards an endpoint it cannot split, so an edge whose `to` carries no `/` is stored and drawn nowhere. The SECTION is named, not the lane, because a connection crosses lanes and lanes are sections — an item re-homed to another lane keeps its section, so the edge survives the move. An edge missing either end is not drawn; its cells stay put for anyone inspecting the entity."
+    }, {
+      "fieldKey" : "kind",
+      "label" : "Kind",
+      "type" : "enum",
+      "required" : false,
+      "enumValues" : [ "association", "depends_on", "enables" ],
+      "note" : "How the two ends relate. Optional: a missing or unrecognised kind reads as `association`, the bidirectional default, which is also what the card writes the moment a line is first drawn. `association` says the two are related and claims no direction; `depends_on` and `enables` claim one. Connecting B to A when A–B already exists removes that edge rather than stacking a second on top of it, so an edge is never stored twice in the two directions."
+    } ]
+  } ],
+  "linksTo" : [ {
+    "fromSection" : "need_model",
+    "fromField" : "value",
+    "targetType" : "69a701870009e16c7959",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "approach_model",
+    "fromField" : "value",
+    "targetType" : "69072b9a2fe987e8b980",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "benefit_refs",
+    "fromField" : "value",
+    "targetType" : "benefit-card-layout-b",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "decision_refs",
+    "fromField" : "value",
+    "targetType" : "696364be003cc58ff2da",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  }, {
+    "fromSection" : "asr_refs",
+    "fromField" : "value",
+    "targetType" : "675f495d0039af23b2cb",
+    "verb" : "references",
+    "verbSource" : "provisional"
+  } ]
+}

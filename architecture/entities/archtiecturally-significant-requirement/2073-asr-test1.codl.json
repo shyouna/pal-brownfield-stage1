@@ -1,0 +1,13 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 2073,
+    "typeKey" : "675f495d0039af23b2cb",
+    "typeName" : "Archtiecturally Significant Requirement",
+    "name" : "ASR-TEST1",
+    "version" : 2,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/675f495d0039af23b2cb.codl-def.json",
+  "sections" : { }
+}

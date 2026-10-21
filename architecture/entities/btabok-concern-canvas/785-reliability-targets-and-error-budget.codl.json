@@ -1,0 +1,24 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 785,
+    "typeKey" : "draft-concern-canvas",
+    "typeName" : "BTABoK Concern Canvas",
+    "name" : "Reliability Targets and Error Budget",
+    "version" : 2,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/draft-concern-canvas.codl-def.json",
+  "sections" : {
+    "concern_selection" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : {
+          "concernCode" : "C13.01",
+          "convertedAt" : "2026-09-25T06:04:18.331Z",
+          "history" : [ ]
+        }
+      }
+    }
+  }
+}

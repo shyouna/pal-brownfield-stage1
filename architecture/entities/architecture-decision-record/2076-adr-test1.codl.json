@@ -1,0 +1,72 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 2076,
+    "typeKey" : "696364be003cc58ff2da",
+    "typeName" : "Architecture Decision Record",
+    "name" : "ADR-TEST1",
+    "version" : 10,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/696364be003cc58ff2da.codl-def.json",
+  "sections" : {
+    "alternatives" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "45acc748",
+        "values" : {
+          "value" : ""
+        }
+      }, {
+        "itemKey" : "7cce65cb",
+        "values" : {
+          "value" : ""
+        }
+      }, {
+        "itemKey" : "9692df50",
+        "values" : {
+          "value" : ""
+        }
+      } ]
+    },
+    "context" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "Testing testing 123"
+      }
+    },
+    "decision" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "Needs a direction"
+      }
+    },
+    "decision_name" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "ADR-TEST1"
+      }
+    },
+    "scope" : {
+      "cardinality" : "one",
+      "values" : {
+        "value" : "Service"
+      }
+    },
+    "traceability" : {
+      "cardinality" : "many",
+      "items" : [ {
+        "itemKey" : "it-mvhpxiag-6rf",
+        "values" : {
+          "context_view_ref" : {
+            "$ref" : {
+              "entityId" : 1873,
+              "typeKey" : "691c986c66c9b8ef3234",
+              "display" : "CV-TEST1"
+            }
+          }
+        }
+      } ]
+    }
+  }
+}

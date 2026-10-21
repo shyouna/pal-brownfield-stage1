@@ -1,0 +1,13 @@
+{
+  "codlVersion" : "2",
+  "entity" : {
+    "id" : 761,
+    "typeKey" : "68ff4446308658719330",
+    "typeName" : "Engagement Model Designer",
+    "name" : "Engagement Model Designer #1",
+    "version" : 1,
+    "solutionId" : 43
+  },
+  "definition" : "definitions/68ff4446308658719330.codl-def.json",
+  "sections" : { }
+}
